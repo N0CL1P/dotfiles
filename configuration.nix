@@ -71,7 +71,6 @@
 
   # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
 
   # Enable Niri.
   programs.niri.enable = true;
@@ -123,10 +122,11 @@
       "wheel"
     ];
     packages = with pkgs; [
-      kdePackages.kate
       zed-editor
       telegram-desktop
       discord
+      rofi
+      waybar
     ];
   };
 
@@ -179,8 +179,6 @@
     mangohud
     rustup
     yazi
-    rofi
-    waybar
     xwayland-satellite
   ];
   # Install fonts.
