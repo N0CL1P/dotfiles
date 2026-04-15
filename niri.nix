@@ -124,8 +124,8 @@
         };
 
         "Mod+Left".action = focus-column-left;
-        "Mod+Down".action = focus-window-down;
-        "Mod+Up".action = focus-window-up;
+        "Mod+Page_Down".action = focus-window-down;
+        "Mod+Page_Up".action = focus-window-up;
         "Mod+Right".action = focus-column-right;
         "Mod+H".action = focus-column-left;
         "Mod+J".action = focus-window-down;
@@ -164,8 +164,8 @@
         "Mod+Shift+Ctrl+K".action = move-column-to-monitor-up;
         "Mod+Shift+Ctrl+L".action = move-column-to-monitor-right;
 
-        "Mod+Page_Down".action = focus-workspace-down;
-        "Mod+Page_Up".action = focus-workspace-up;
+        "Mod+Down".action = focus-workspace-down;
+        "Mod+Up".action = focus-workspace-up;
         "Mod+U".action = focus-workspace-down;
         "Mod+I".action = focus-workspace-up;
         "Mod+Ctrl+Page_Down".action = move-column-to-workspace-down;
