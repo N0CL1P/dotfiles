@@ -28,7 +28,7 @@
     shellAliases = {
       ll = "ls -l";
       svim = "sudo nvim -u ~/.config/nvim/init.lua";
-      update = "nh os switch";
+      update = "nh os switch ~/dotfiles";
       y = "yazi";
     };
 
