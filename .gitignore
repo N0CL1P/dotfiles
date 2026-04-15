@@ -1,0 +1,6 @@
+secrets.nix
+*.age
+hardware-configuration.nix
+result
+result-*
+.direnv
