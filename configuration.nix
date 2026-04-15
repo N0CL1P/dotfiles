@@ -31,11 +31,12 @@
 
   programs.nh = {
     enable = true;
-    flake = "~/dotfiles";
+    # Путь к твоему flake (очень рекомендуется указывать)
+    flake = "/etc/nixos"; # или "~/nixos-config" или "/home/mollan/dotfiles"
     clean = {
-      enable = true;
-      extraArgs = "--keep-since 7d --keep 5";
-      dates = "weekly";
+      enable = true; # включает автоматическую очистку через systemd
+      extraArgs = "--keep-since 7d --keep 5"; # оставить поколения младше 7 дней + минимум 10 последних
+      dates = "weekly"; # или "daily"
     };
   };
 

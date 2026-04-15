@@ -28,8 +28,9 @@
     shellAliases = {
       ll = "ls -l";
       svim = "sudo nvim -u ~/.config/nvim/init.lua";
-      update = "nh os switch ~/dotfiles";
+      update = "nh os switch";
       y = "yazi";
+      dotfiles-push = "sudo cp -r /etc/nixos/* ~/dotfiles/ && git -C ~/dotfiles add . && git -C ~/dotfiles commit -m 'update' && git -C ~/dotfiles push";
     };
 
     history.size = 10000;
