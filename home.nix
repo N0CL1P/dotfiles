@@ -11,6 +11,7 @@
     ./git.nix
     ./dms.nix
     ./river.nix
+    ./yazi.nix
   ];
 
   home.username = "mollan";

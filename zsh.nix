@@ -17,9 +17,7 @@
       ll = "ls -l";
       svim = "sudo nvim -u ~/.config/nvim/init.lua";
       vim = "nvim";
-      vi = "nvim";
       update = "nh os switch";
-      y = "yazi";
       dotfiles-push = "sudo cp -r /etc/nixos/* ~/dotfiles/ && git -C ~/dotfiles add . && git -C ~/dotfiles commit -m 'update' && git -C ~/dotfiles pull --rebase && git -C ~/dotfiles push";
     };
     history = {

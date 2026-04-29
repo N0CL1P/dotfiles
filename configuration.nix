@@ -141,6 +141,9 @@
       fuzzel
       libreoffice
       rivercarro
+      kdePackages.dolphin
+      bibata-cursors
+      prismlauncher
     ];
   };
 
@@ -183,20 +186,15 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    kitty
     btop
-    fastfetch
+    wl-clipboard
     # impala
     wiremix
     vulkan-tools
     mesa-demos
-    # mangohud
-    rustup
-    yazi
     xwayland-satellite
-    kdePackages.dolphin
-    bibata-cursors
-    prismlauncher
+    rustc
+    cargo
     zig
     zls
   ];
