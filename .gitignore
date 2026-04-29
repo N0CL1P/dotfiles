@@ -3,4 +3,3 @@ secrets.nix
 result
 result-*
 .direnv
-git.nix
