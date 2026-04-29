@@ -33,9 +33,6 @@
       ];
     };
     initContent = ''
-            # ─────────────────────────────────────────────
-            #  Custom prompt: user · path · status
-            # ─────────────────────────────────────────────
             autoload -Uz colors && colors
 
             _prompt_first=1
@@ -47,7 +44,6 @@
               fi
             }
 
-            # ── Цвета ─────────────────────────────────────
             _c_reset="%f%b"
             _c_user="%F{cyan}%B"
             _c_at="%F{240}"
@@ -57,7 +53,6 @@
             _c_ok="%F{green}"
             _c_err="%F{red}"
 
-            # ── Prompt ────────────────────────────────────
             setopt PROMPT_SUBST
             PROMPT="''${_c_user}%n''${_c_reset}''${_c_at}@''${_c_reset}''${_c_host}%m''${_c_reset} ''${_c_sep}in''${_c_reset} ''${_c_dir}%~''${_c_reset}
       %(?.''${_c_ok}❯''${_c_reset}.''${_c_err}❯''${_c_reset}) "
