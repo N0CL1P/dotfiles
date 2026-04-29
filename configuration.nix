@@ -40,6 +40,16 @@
     };
   };
 
+  # Add disk.
+  fileSystems."/mnt/data" = {
+    device = "/dev/disk/by-uuid/8118b562-d1ca-4c7c-b9b1-5f2c0ea5d6d1";
+    fsType = "ext4";
+    options = [
+      "defaults"
+      "nofail"
+    ];
+  };
+
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
@@ -69,6 +79,9 @@
   # You can disable this if you're only using the Wayland session.
   services.xserver.enable = true;
 
+  services.power-profiles-daemon.enable = true;
+  services.accounts-daemon.enable = true;
+
   # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
 
@@ -76,13 +89,13 @@
   programs.niri.enable = true;
 
   # Enable video drivers.
-  hardware.graphics.enable = true;
-
+  hardware.graphics = {
+    enable = true;
+    # Enable 32-bit mesa.
+    enable32Bit = true;
+  };
   # Enable bluetooth.
   hardware.bluetooth.enable = true;
-
-  # Enable 32-bit mesa.
-  hardware.graphics.enable32Bit = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -125,13 +138,11 @@
       zed-editor
       telegram-desktop
       discord
-      rofi
-      waybar
+      fuzzel
+      libreoffice
+      rivercarro
     ];
   };
-
-  # Install firefox.
-  programs.firefox.enable = true;
 
   # Install steam.
   programs.steam = {
@@ -147,7 +158,7 @@
     # Доп. пакеты в окружение Steam
     extraPackages = with pkgs; [
       gamemode
-      mangohud
+      # mangohud
     ];
   };
 
@@ -156,6 +167,9 @@
 
   # Enable Ollama.
   # services.ollama.enable = true;
+
+  # Enable lact.
+  services.lact.enable = true;
 
   # Enable git.
   programs.git.enable = true;
@@ -176,10 +190,15 @@
     wiremix
     vulkan-tools
     mesa-demos
-    mangohud
+    # mangohud
     rustup
     yazi
     xwayland-satellite
+    kdePackages.dolphin
+    bibata-cursors
+    prismlauncher
+    zig
+    zls
   ];
   # Install fonts.
   fonts.packages = with pkgs; [

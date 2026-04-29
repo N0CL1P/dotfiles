@@ -6,13 +6,24 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
+    spicetify-nix = {
+      url = "github:Gerg-L/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nixvim = {
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     niri = {
       url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    dms = {
+      url = "github:AvengeMedia/DankMaterialShell/stable";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    zen-browser = {
+      url = "github:youwen5/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -34,7 +45,6 @@
         modules = [
           ./configuration.nix
           home-manager.nixosModules.default
-          inputs.niri.nixosModules.niri
           {
             home-manager = {
               useGlobalPkgs = true;
@@ -43,12 +53,16 @@
               backupFileExtension = "backup";
               extraSpecialArgs = { inherit inputs; };
               sharedModules = [
+                inputs.niri.homeModules.niri
                 inputs.spicetify-nix.homeManagerModules.default
                 inputs.nixvim.homeModules.default
+                inputs.dms.homeModules.dank-material-shell
+                inputs.dms.homeModules.niri
               ];
             };
 
             environment.systemPackages = [
+              inputs.zen-browser.packages.${system}.default
             ];
           }
         ];
