@@ -76,7 +76,7 @@
 
       screenshot-path = "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png";
 
-      hotkey-overlay.skip-at-startup = false;
+      hotkey-overlay.skip-at-startup = true;
 
       spawn-at-startup = [
         {
@@ -95,29 +95,8 @@
 
           "Mod+T".action = spawn "kitty";
           "Mod+D".action = spawn "fuzzel";
+          "Mod+E".action = spawn "yazi";
           "Mod+Delete".action = spawn "wpctl" "set-mute" "@DEFAULT_SOURCE@" "toggle";
-          "Super+Alt+L".action = spawn "swaylock";
-          "Super+Alt+S" = {
-            allow-when-locked = true;
-            action = sh "pkill orca || exec orca";
-          };
-
-          "XF86AudioRaiseVolume" = {
-            allow-when-locked = true;
-            action = sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+";
-          };
-          "XF86AudioLowerVolume" = {
-            allow-when-locked = true;
-            action = sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-";
-          };
-          "XF86AudioMute" = {
-            allow-when-locked = true;
-            action = sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
-          };
-          "XF86AudioMicMute" = {
-            allow-when-locked = true;
-            action = sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle";
-          };
 
           "Mod+O" = {
             repeat = false;
