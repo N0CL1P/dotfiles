@@ -138,7 +138,6 @@
       zed-editor
       telegram-desktop
       discord
-      fuzzel
       libreoffice
       rivercarro
       bibata-cursors

@@ -13,6 +13,7 @@
     ./pkgs/yazi/yazi.nix
     ./pkgs/ncmpcpp/ncmpcpp.nix
     ./pkgs/wezterm/wezterm.nix
+    ./pkgs/fuzzel/fuzzel.nix
   ];
 
   home.username = "mollan";
