@@ -14,6 +14,20 @@
     ./pkgs/ncmpcpp/ncmpcpp.nix
     ./pkgs/wezterm/wezterm.nix
     ./pkgs/fuzzel/fuzzel.nix
+    ./pkgs/zig/zig.nix
+    ./pkgs/zig/zls.nix
+    ./pkgs/rust/rust.nix
+    ./pkgs/rust/cargo.nix
+    ./pkgs/rust/rust-analyzer.nix
+    ./pkgs/btop/btop.nix
+    ./pkgs/wiremix/wiremix.nix
+    ./pkgs/wl-clipboard/wl-clipboard.nix
+    ./pkgs/zed-editor/zed-editor.nix
+    ./pkgs/telegram-desktop/telegram-desktop.nix
+    ./pkgs/discord/discord.nix
+    ./pkgs/libreoffice/libreoffice.nix
+    ./pkgs/prismlauncher/prismlauncher.nix
+    ./pkgs/cursors/cursors.nix
   ];
 
   home.username = "mollan";

@@ -81,6 +81,9 @@
         servers = {
           nixd.enable = true;
           zls.enable = true;
+          lua-language-server = true;
+          rust_analyzer.rustc = true;
+          rust_analyzer.cargo = true;
         };
       };
 
