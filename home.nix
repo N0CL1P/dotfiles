@@ -12,7 +12,7 @@
     ./pkgs/river/river.nix
     ./pkgs/yazi/yazi.nix
     ./pkgs/ncmpcpp/ncmpcpp.nix
-    ./pkgs/wezterm/wezterm.nix
+    ./pkgs/kitty/kitty.nix
     ./pkgs/fuzzel/fuzzel.nix
     ./pkgs/zig/zig.nix
     ./pkgs/zig/zls.nix
@@ -27,6 +27,7 @@
     ./pkgs/discord/discord.nix
     ./pkgs/libreoffice/libreoffice.nix
     ./pkgs/prismlauncher/prismlauncher.nix
+    ./pkgs/keepassxc/keepassxc.nix
     ./pkgs/cursors/cursors.nix
   ];
 
