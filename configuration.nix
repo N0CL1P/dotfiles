@@ -115,13 +115,6 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  environment.systemPackages = with pkgs; [
-    # impala
-    vulkan-tools
-    mesa-demos
-    xwayland-satellite
-  ];
-
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
     noto-fonts-color-emoji

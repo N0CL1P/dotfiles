@@ -28,6 +28,9 @@
     ./pkgs/libreoffice/libreoffice.nix
     ./pkgs/prismlauncher/prismlauncher.nix
     ./pkgs/keepassxc/keepassxc.nix
+    ./pkgs/xwayland-satellite/xwayland-satellite.nix
+    ./pkgs/vulkan-tools/vulkan-tools.nix
+    ./pkgs/mesa-demos/mesa-demos.nix
     ./pkgs/cursors/cursors.nix
   ];
 
