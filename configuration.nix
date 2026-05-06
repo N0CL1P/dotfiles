@@ -59,18 +59,30 @@
     };
   };
   time.timeZone = "Asia/Almaty";
+  console = {
+    font = "cyr-sun16";
+    keyMap = "us";
+    earlySetup = true;
+  };
 
   services = {
-    xserver = {
+    greetd = {
       enable = true;
-      xkb = {
-        layout = "us";
-        variant = "";
+      settings = {
+        default_session = {
+          command = ''
+            ${pkgs.tuigreet}/bin/tuigreet \
+            --time \
+            --remember \
+            --remember-session \
+            --greeting 'Добро пожаловать'
+          '';
+          user = "greeter";
+        };
       };
     };
     power-profiles-daemon.enable = true;
     accounts-daemon.enable = true;
-    displayManager.sddm.enable = true;
     printing.enable = false;
     pulseaudio.enable = false;
     lact.enable = true;
@@ -79,6 +91,8 @@
       alsa.enable = true;
       alsa.support32Bit = true;
       pulse.enable = true;
+      jack.enable = true;
+      wireplumber.enable = true;
     };
   };
 
@@ -110,6 +124,8 @@
     extraGroups = [
       "networkmanager"
       "wheel"
+      "video"
+      "input"
     ];
   };
 
