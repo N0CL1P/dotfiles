@@ -1,34 +1,15 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   imports = [
     ./hardware-configuration.nix
   ];
 
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-
-  boot.initrd.kernelModules = [ "amdgpu" ];
-
-  networking.hostName = "nixos-btw";
-
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
-
-  nix.settings.auto-optimise-store = true;
-
-  programs.nh = {
-    enable = true;
-    flake = "/etc/nixos";
-    clean = {
-      enable = true;
-      extraArgs = "--keep-since 7d --keep 5";
-      dates = "weekly";
-    };
+  boot = {
+    loader.systemd-boot.enable = true;
+    loader.efi.canTouchEfiVariables = true;
+    kernelPackages = pkgs.linuxPackages_latest;
+    initrd.kernelModules = [ "amdgpu" ];
   };
 
   fileSystems."/mnt/data" = {
@@ -40,54 +21,86 @@
     ];
   };
 
-  networking.networkmanager.enable = true;
+  hardware = {
+    graphics = {
+      enable = true;
+      enable32Bit = true;
+    };
+    bluetooth.enable = true;
+  };
 
+  nix.settings = {
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
+    auto-optimise-store = true;
+  };
+  nixpkgs.config.allowUnfree = true;
+  security.rtkit.enable = true;
+
+  networking = {
+    hostName = "nixos-btw";
+    networkmanager.enable = true;
+  };
+
+  i18n = {
+    defaultLocale = "ru_RU.UTF-8";
+    extraLocaleSettings = {
+      LC_ADDRESS = "ru_RU.UTF-8";
+      LC_IDENTIFICATION = "ru_RU.UTF-8";
+      LC_MEASUREMENT = "ru_RU.UTF-8";
+      LC_MONETARY = "ru_RU.UTF-8";
+      LC_NAME = "ru_RU.UTF-8";
+      LC_NUMERIC = "ru_RU.UTF-8";
+      LC_PAPER = "ru_RU.UTF-8";
+      LC_TELEPHONE = "ru_RU.UTF-8";
+      LC_TIME = "ru_RU.UTF-8";
+    };
+  };
   time.timeZone = "Asia/Almaty";
 
-  i18n.defaultLocale = "ru_RU.UTF-8";
-
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "ru_RU.UTF-8";
-    LC_IDENTIFICATION = "ru_RU.UTF-8";
-    LC_MEASUREMENT = "ru_RU.UTF-8";
-    LC_MONETARY = "ru_RU.UTF-8";
-    LC_NAME = "ru_RU.UTF-8";
-    LC_NUMERIC = "ru_RU.UTF-8";
-    LC_PAPER = "ru_RU.UTF-8";
-    LC_TELEPHONE = "ru_RU.UTF-8";
-    LC_TIME = "ru_RU.UTF-8";
+  services = {
+    xserver = {
+      enable = true;
+      xkb = {
+        layout = "us";
+        variant = "";
+      };
+    };
+    power-profiles-daemon.enable = true;
+    accounts-daemon.enable = true;
+    displayManager.sddm.enable = true;
+    printing.enable = false;
+    pulseaudio.enable = false;
+    lact.enable = true;
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+    };
   };
 
-  services.xserver.enable = true;
-
-  services.power-profiles-daemon.enable = true;
-  services.accounts-daemon.enable = true;
-
-  services.displayManager.sddm.enable = true;
-
-  programs.niri.enable = true;
-
-  hardware.graphics = {
-    enable = true;
-    enable32Bit = true;
-  };
-
-  hardware.bluetooth.enable = true;
-
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-  };
-
-  services.printing.enable = false;
-
-  services.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
+  programs = {
+    niri.enable = true;
+    zsh.enable = true;
+    gamemode.enable = true;
+    nh = {
+      enable = true;
+      flake = "/etc/nixos";
+      clean = {
+        enable = true;
+        extraArgs = "--keep-since 7d --keep 5";
+        dates = "weekly";
+      };
+    };
+    steam = {
+      enable = true;
+      remotePlay.openFirewall = true;
+      dedicatedServer.openFirewall = true;
+      extraCompatPackages = [ pkgs.proton-ge-bin ];
+    };
   };
 
   users.users.mollan = {
@@ -99,21 +112,6 @@
       "wheel"
     ];
   };
-
-  programs.steam = {
-    enable = true;
-    remotePlay.openFirewall = true;
-    dedicatedServer.openFirewall = true;
-    extraCompatPackages = [ pkgs.proton-ge-bin ];
-  };
-
-  services.lact.enable = true;
-
-  programs.zsh.enable = true;
-
-  programs.gamemode.enable = true;
-
-  nixpkgs.config.allowUnfree = true;
 
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
