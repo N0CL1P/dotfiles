@@ -22,6 +22,7 @@
   };
 
   hardware = {
+    amdgpu.opencl.enable = true;
     graphics = {
       enable = true;
       enable32Bit = true;
@@ -37,7 +38,11 @@
     auto-optimise-store = true;
   };
   nixpkgs.config.allowUnfree = true;
-  security.rtkit.enable = true;
+
+  security = {
+    rtkit.enable = true;
+    polkit.enable = true;
+  };
 
   networking = {
     hostName = "nixos-btw";
