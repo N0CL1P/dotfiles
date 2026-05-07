@@ -15,8 +15,9 @@
     syntaxHighlighting.enable = true;
     shellAliases = {
       ll = "ls -l";
-      svim = "sudo nvim -u ~/.config/nvim/init.lua";
-      vim = "nvim";
+      shx = "sudo hx -c ~/.config/helix/config.toml";
+      svim = "sudo hx -c ~/.config/helix/config.toml";
+      vim = "hx";
       update = "nh os switch";
       dotfiles-push = "cp -r /etc/nixos/* ~/dotfiles/ && git -C ~/dotfiles add -A && git -C ~/dotfiles commit -m 'update' && git -C ~/dotfiles push";
     };

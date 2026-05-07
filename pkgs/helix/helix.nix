@@ -3,7 +3,7 @@
   programs.helix = {
     enable = true;
     settings = {
-      theme = "dark_plus";
+      theme = "jetbrains_dark";
       editor = {
         auto-completion = true;
         auto-format = true;
