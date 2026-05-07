@@ -4,6 +4,7 @@
   imports = [
     ./pkgs/niri/niri.nix
     ./pkgs/nixvim/nixvim.nix
+    ./pkgs/helix/helix.nix
     ./pkgs/spicetify/spicetify.nix
     ./pkgs/zsh/zsh.nix
     ./pkgs/fastfetch/fastfetch.nix
@@ -15,10 +16,11 @@
     ./pkgs/kitty/kitty.nix
     ./pkgs/fuzzel/fuzzel.nix
     ./pkgs/zig/zig.nix
-    ./pkgs/zig/zls.nix
-    ./pkgs/rust/rust.nix
+    ./pkgs/rust/rustc.nix
     ./pkgs/rust/cargo.nix
-    ./pkgs/rust/rust-analyzer.nix
+    ./pkgs/language-server/zls.nix
+    ./pkgs/language-server/rust-analyzer.nix
+    ./pkgs/language-server/nixd.nix
     ./pkgs/btop/btop.nix
     ./pkgs/wiremix/wiremix.nix
     ./pkgs/wl-clipboard/wl-clipboard.nix
@@ -63,6 +65,6 @@
   home.sessionVariables = {
     XCURSOR_THEME = "Bibata-Modern-Ice";
     XCURSOR_SIZE = "24";
-    TERMINAL = "wezterm";
+    TERMINAL = "kitty";
   };
 }
