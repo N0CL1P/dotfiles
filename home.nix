@@ -17,9 +17,10 @@
     ./pkgs/zig/zig.nix
     ./pkgs/rust/rustc.nix
     ./pkgs/rust/cargo.nix
-    ./pkgs/language-server/zls.nix
-    ./pkgs/language-server/rust-analyzer.nix
-    ./pkgs/language-server/nixd.nix
+    ./pkgs/lsp/zls.nix
+    ./pkgs/lsp/rust-analyzer.nix
+    ./pkgs/lsp/nixd.nix
+    ./pkgs/lsp/taplo.nix
     ./pkgs/btop/btop.nix
     ./pkgs/wiremix/wiremix.nix
     ./pkgs/wl-clipboard/wl-clipboard.nix
