@@ -4,8 +4,10 @@
   imports = [
     ./pkgs/niri/niri.nix
     ./pkgs/helix/helix.nix
+    ./pkgs/emacs/emacs.nix
     ./pkgs/spicetify/spicetify.nix
     ./pkgs/zsh/zsh.nix
+    ./pkgs/oh-my-posh/oh-my-posh.nix
     ./pkgs/fastfetch/fastfetch.nix
     ./pkgs/git/git.nix
     ./pkgs/dms/dms.nix
