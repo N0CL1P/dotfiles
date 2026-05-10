@@ -12,7 +12,6 @@
     epkgs.corfu
     epkgs.kind-icon
     epkgs.which-key
-    epkgs.sudo-edit
     ];
   };
 }

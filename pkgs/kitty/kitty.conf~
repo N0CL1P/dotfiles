@@ -17,72 +17,72 @@ dynamic_background_opacity yes
 background_opacity 0.69
 background_blur 10
 
-# doom-xcode color scheme for Kitty terminal
-# Based on doom-xcode (ported by @kadenbarlow) — Apple's Xcode Dark theme
-# Original: https://github.com/doomemacs/themes
+# JetBrains New UI Dark color scheme for Kitty terminal
+# Based on the official JetBrains New UI Dark theme (2022+)
+# UI background: #1e1f22, editor: #1e1f22, panels: #2b2d30
 
 # ── Basic colors ──────────────────────────────────────────────────────────────
-foreground              #ffffff
-background              #292a30
-selection_foreground    #ffffff
-selection_background    #2f6490
+foreground              #dfe1e5
+background              #1e1f22
+selection_foreground    #dfe1e5
+selection_background    #2e436e
 
 # ── Cursor ────────────────────────────────────────────────────────────────────
-cursor                  #ffffff
-cursor_text_color       #292a30
+cursor                  #dfe1e5
+cursor_text_color       #1e1f22
 
 # ── URL underline ─────────────────────────────────────────────────────────────
-url_color               #5dd8ff
+url_color               #3574f0
 
 # ── Window border ─────────────────────────────────────────────────────────────
-active_border_color     #5dd8ff
-inactive_border_color   #3d3e43
-bell_border_color       #ffa14f
+active_border_color     #3574f0
+inactive_border_color   #393b40
+bell_border_color       #f0a732
 
 # ── Tab bar ───────────────────────────────────────────────────────────────────
-active_tab_foreground   #ffffff
-active_tab_background   #3d3e43
-inactive_tab_foreground #7f8c98
-inactive_tab_background #1f2024
-tab_bar_background      #1f2024
+active_tab_foreground   #dfe1e5
+active_tab_background   #1e1f22
+inactive_tab_foreground #6f7074
+inactive_tab_background #2b2d30
+tab_bar_background      #1e1f22
 
 # ── Marks ─────────────────────────────────────────────────────────────────────
-mark1_foreground        #292a30
-mark1_background        #5dd8ff
-mark2_foreground        #292a30
-mark2_background        #78c2b3
-mark3_foreground        #292a30
-mark3_background        #dabaff
+mark1_foreground        #1e1f22
+mark1_background        #3574f0
+mark2_foreground        #1e1f22
+mark2_background        #369650
+mark3_foreground        #1e1f22
+mark3_background        #cf8b23
 
 # ── 16 ANSI colors ────────────────────────────────────────────────────────────
 # black
-color0  #1f2024
-color8  #3d3e43
+color0  #1e1f22
+color8  #4e5157
 
 # red
-color1  #ff8170
-color9  #ff8170
+color1  #f75464
+color9  #f75464
 
 # green
-color2  #78c2b3
-color10 #acf2e4
+color2  #369650
+color10 #57965c
 
 # yellow
-color3  #ffa14f
-color11 #ffd173
+color3  #cf8b23
+color11 #f0a732
 
 # blue
-color4  #4eb0cc
-color12 #5dd8ff
+color4  #3574f0
+color12 #548af7
 
 # magenta / purple
-color5  #ff7ab2
-color13 #dabaff
+color5  #b05af4
+color13 #c77dff
 
 # cyan
-color6  #b281eb
-color14 #5dd8ff
+color6  #2fb5c6
+color14 #54b4c2
 
 # white
-color7  #ffffff
+color7  #dfe1e5
 color15 #ffffff

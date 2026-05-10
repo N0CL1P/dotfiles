@@ -3,7 +3,6 @@
 {
   imports = [
     ./pkgs/niri/niri.nix
-    ./pkgs/helix/helix.nix
     ./pkgs/emacs/emacs.nix
     ./pkgs/spicetify/spicetify.nix
     ./pkgs/zsh/zsh.nix
@@ -26,7 +25,6 @@
     ./pkgs/btop/btop.nix
     ./pkgs/wiremix/wiremix.nix
     ./pkgs/wl-clipboard/wl-clipboard.nix
-    ./pkgs/zed-editor/zed-editor.nix
     ./pkgs/telegram-desktop/telegram-desktop.nix
     ./pkgs/discord/discord.nix
     ./pkgs/libreoffice/libreoffice.nix
@@ -43,7 +41,8 @@
   home.stateVersion = "26.05";
   # systemd.user.services.niri-flake-polkit.enable = false;
 
-  services.mpd = {
+  services = {
+    mpd = {
     enable = true;
     musicDirectory = "/home/mollan/Music";
     network.listenAddress = "127.0.0.1";
@@ -54,6 +53,11 @@
         name "PipeWire Output"
       }
     '';
+    };
+    emacs = {
+      enable = true;
+      defaultEditor = true;
+    };
   };
 
   home.pointerCursor = {
