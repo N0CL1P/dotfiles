@@ -3,16 +3,22 @@
   programs.emacs = {
   enable = true;
   package = pkgs.emacs-pgtk;
-  extraPackages = epkgs: [
-    epkgs.doom-themes
-    epkgs.treesit-auto
-    epkgs.nix-mode
-    epkgs.zig-mode
-    epkgs.rust-mode
-    epkgs.corfu
-    epkgs.kind-icon
-    epkgs.which-key
-    epkgs.sudo-edit
+  extraPackages = epkgs: with epkgs; [
+    doom-themes
+    doom-modeline
+    treesit-auto
+    nix-mode
+    zig-mode
+    rust-mode
+    corfu
+    kind-icon
+    cape
+    vertico
+    orderless
+    marginalia
+    consult
+    magit
+    sudo-edit
     ];
   };
 }
