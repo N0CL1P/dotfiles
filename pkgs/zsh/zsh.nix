@@ -16,7 +16,7 @@
     shellAliases = {
       ll = "ls -l";
       e = "emacsclient -c";
-      et = "emacsclient -nw"; #
+      et = "emacsclient -nw";
       update = "nh os switch";
       dotfiles-push = "cp -r /etc/nixos/* ~/dotfiles/ && git -C ~/dotfiles add -A && git -C ~/dotfiles commit -m 'update' && git -C ~/dotfiles push";
     };
