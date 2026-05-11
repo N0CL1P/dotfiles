@@ -5,8 +5,8 @@
     enableZshIntegration = true;
     settings = {
       mgr = {
-    show_hidden = false;
-    };
+        show_hidden = false;
+      };
     };
   };
 }

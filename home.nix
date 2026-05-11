@@ -3,7 +3,7 @@
 {
   imports = [
     ./pkgs/niri/niri.nix
-    ./pkgs/emacs/emacs.nix
+    ./pkgs/nixvim/nixvim.nix
     ./pkgs/spicetify/spicetify.nix
     ./pkgs/zsh/zsh.nix
     ./pkgs/oh-my-posh/oh-my-posh.nix
@@ -18,10 +18,6 @@
     ./pkgs/zig/zig.nix
     ./pkgs/rust/rustc.nix
     ./pkgs/rust/cargo.nix
-    ./pkgs/lsp/zls.nix
-    ./pkgs/lsp/rust-analyzer.nix
-    ./pkgs/lsp/nixd.nix
-    ./pkgs/lsp/taplo.nix
     ./pkgs/btop/btop.nix
     ./pkgs/wiremix/wiremix.nix
     ./pkgs/wl-clipboard/wl-clipboard.nix
@@ -43,20 +39,16 @@
 
   services = {
     mpd = {
-    enable = true;
-    musicDirectory = "/home/mollan/Music";
-    network.listenAddress = "127.0.0.1";
-    network.port = 6600;
-    extraConfig = ''
-      audio_output {
-        type "pipewire"
-        name "PipeWire Output"
-      }
-    '';
-    };
-    emacs = {
       enable = true;
-      defaultEditor = true;
+      musicDirectory = "/home/mollan/Music";
+      network.listenAddress = "127.0.0.1";
+      network.port = 6600;
+      extraConfig = ''
+        audio_output {
+          type "pipewire"
+          name "PipeWire Output"
+        }
+      '';
     };
   };
 

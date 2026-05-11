@@ -1,8 +1,7 @@
-{ pkgs, ... }:
+{ ... }:
 {
   wayland.windowManager.river = {
     enable = true;
-    # package = pkgs.river; # или из unstable/оверлея
     settings = {
       map.normal = {
         "Super+D" = "spawn rofi -show drun";
