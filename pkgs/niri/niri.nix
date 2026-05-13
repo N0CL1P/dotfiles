@@ -1,4 +1,3 @@
-# niri.nix
 { config, ... }:
 
 {
