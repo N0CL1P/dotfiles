@@ -7,8 +7,6 @@
 
     extraPackages = with pkgs; [
       tree-sitter
-      ripgrep
-      fd
       nixfmt
     ];
 

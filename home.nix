@@ -4,6 +4,8 @@
   imports = [
     ./pkgs/niri/niri.nix
     ./pkgs/eza/eza.nix
+    ./pkgs/ripgrep/ripgrep.nix
+    ./pkgs/fd/fd.nix
     ./pkgs/nixvim/nixvim.nix
     ./pkgs/obsidian/obsidian.nix
     ./pkgs/spicetify/spicetify.nix
