@@ -14,7 +14,8 @@
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     shellAliases = {
-      ll = "ls -l";
+      ll = "eza -lh --icons --git";
+      lt = "eza -lh --icons --git -T";
       svim = "sudo nvim -u ~/.config/nvim/init.lua";
       vim = "nvim";
       update = "nh os switch";

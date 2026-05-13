@@ -3,6 +3,7 @@
 {
   imports = [
     ./pkgs/niri/niri.nix
+    ./pkgs/eza/eza.nix
     ./pkgs/nixvim/nixvim.nix
     ./pkgs/obsidian/obsidian.nix
     ./pkgs/spicetify/spicetify.nix
