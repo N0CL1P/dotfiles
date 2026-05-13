@@ -9,6 +9,7 @@
       tree-sitter
       ripgrep
       fd
+      nixfmt
     ];
 
     opts = {
@@ -76,7 +77,29 @@
           };
         };
         servers = {
-          nixd.enable = true;
+          nixd = {
+            enable = true;
+            settings = {
+              nixd = {
+                nixpkgs = {
+                  expr = "(builtins.getFlake \"/etc/nixos\").inputs.nixpkgs.legacyPackages.x86_64-linux";
+                };
+
+                options = {
+                  nixos = {
+                    expr = "(builtins.getFlake \"/etc/nixos\").nixosConfigurations.nixos-btw.options";
+                  };
+                  home_manager = {
+                    expr = "(builtins.getFlake \"/etc/nixos\").nixosConfigurations.nixos-btw.config.home-manager.users.mollan";
+                  };
+                };
+
+                formatting = {
+                  command = [ "nixfmt" ];
+                };
+              };
+            };
+          };
           zls.enable = true;
           lua_ls.enable = true;
           rust_analyzer = {

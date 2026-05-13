@@ -4,6 +4,7 @@
   imports = [
     ./pkgs/niri/niri.nix
     ./pkgs/nixvim/nixvim.nix
+    ./pkgs/obsidian/obsidian.nix
     ./pkgs/spicetify/spicetify.nix
     ./pkgs/zsh/zsh.nix
     ./pkgs/oh-my-posh/oh-my-posh.nix
