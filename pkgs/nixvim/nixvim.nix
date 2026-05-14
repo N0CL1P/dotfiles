@@ -30,10 +30,37 @@
       updatetime = 250;
       ignorecase = true;
       smartcase = true;
-      completeopt = "menu,menuone,noselect";
+      splitbelow = true;
+      splitright = true;
+      clipboard = "unnamedplus";
     };
 
     keymaps = [
+      {
+        key = "<C-s>";
+        action = "<cmd>w<CR>";
+      }
+      {
+        key = "<C-h>";
+        action = "<C-w>h";
+      }
+      {
+        key = "<C-j>";
+        action = "<C-w>j";
+      }
+      {
+        key = "<C-k>";
+        action = "<C-w>k";
+      }
+      {
+        key = "<C-l>";
+        action = "<C-w>l";
+      }
+      {
+        key = "<Esc>";
+        action = "<C-\\><C-n>";
+        mode = [ "t" ];
+      }
       {
         key = "<leader>ff";
         action = "<cmd>Telescope find_files<CR>";
@@ -50,6 +77,11 @@
         options.desc = "Buffers";
       }
       {
+        key = "<leader>fd";
+        action = "<cmd>Telescope diagnostics<CR>";
+        options.desc = "Diagnostics";
+      }
+      {
         key = "-";
         action = "<cmd>Oil<CR>";
         options.desc = "Open oil";
@@ -64,6 +96,26 @@
         action = "<cmd>Trouble diagnostics toggle<CR>";
         options.desc = "Open trouble";
       }
+      {
+        key = "]c";
+        action = "<cmd>Gitsigns next_hunk<CR>";
+        options.desc = "Next hunk";
+      }
+      {
+        key = "[c";
+        action = "<cmd>Gitsigns prev_hunk<CR>";
+        options.desc = "Prev hunk";
+      }
+      {
+        key = "<leader>hs";
+        action = "<cmd>Gitsigns stage_hunk<CR>";
+        options.desc = "Stage hunk";
+      }
+      {
+        key = "<leader>hp";
+        action = "<cmd>Gitsigns preview_hunk<CR>";
+        options.desc = "Preview hunk";
+      }
     ];
 
     plugins = {
@@ -72,9 +124,11 @@
         keymaps = {
           lspBuf = {
             gd = "definition";
+            gr = "references";
             K = "hover";
             "<leader>rn" = "rename";
             "<leader>ca" = "code_action";
+            "<leader>D" = "type_definition";
           };
         };
         servers = {
@@ -231,8 +285,25 @@
         modules = {
           icons = { };
           starter = { };
-          surround = { };
-          comment = { };
+          surround = {
+            mappings = {
+              add = "gsa";
+              delete = "gsd";
+              find = "gsf";
+              find_left = "gsF";
+              highlight = "gsh";
+              replace = "gsr";
+              update_n_lines = "gsn";
+            };
+          };
+          comment = {
+            mappings = {
+              comment = "gc";
+              comment_line = "gcc";
+              comment_visual = "gc";
+              textobject = "gc";
+            };
+          };
           move = { };
         };
       };
@@ -251,7 +322,10 @@
 
       fidget.enable = true;
 
-      illuminate.enable = true;
+      illuminate = {
+        enable = true;
+        settings.delay = 300;
+      };
 
       luasnip.enable = true;
 
