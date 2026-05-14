@@ -20,6 +20,7 @@
       svim = "sudo nvim -u ~/.config/nvim/init.lua";
       vim = "nvim";
       update = "git -C ~/dotfiles add -A && nh os switch";
+      nfu = "nix flake update";
       dotfiles-push = "git -C ~/dotfiles add -A && git -C ~/dotfiles commit -m 'update' && git -C ~/dotfiles push";
     };
     history = {
