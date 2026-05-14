@@ -8,32 +8,30 @@
     extraPackages = with pkgs; [
       tree-sitter
       nixfmt
+      rustfmt
+      stylua
+      ruff
     ];
 
     opts = {
       number = true;
       relativenumber = true;
       cursorline = true;
+      signcolumn = "yes";
+      termguicolors = true;
       shiftwidth = 4;
+      tabstop = 4;
+      expandtab = true;
+      scrolloff = 8;
+      wrap = false;
+      swapfile = false;
+      undofile = true;
+      timeoutlen = 300;
+      updatetime = 250;
+      ignorecase = true;
+      smartcase = true;
+      completeopt = "menu,menuone,noselect";
     };
-
-    autoCmd = [
-      {
-        event = [ "BufWritePre" ];
-        callback = {
-          __raw = ''
-            function()
-              vim.lsp.buf.format({
-                async = false,
-                filter = function(client)
-                  return client.name == "null-ls"
-                end
-              })
-            end
-          '';
-        };
-      }
-    ];
 
     keymaps = [
       {
@@ -60,6 +58,11 @@
         key = "<leader>-";
         action = "<cmd>Oil --float<CR>";
         options.desc = "Open oil (float)";
+      }
+      {
+        key = "<leader>xx";
+        action = "<cmd>Trouble diagnostics toggle<CR>";
+        options.desc = "Open trouble";
       }
     ];
 
@@ -91,7 +94,6 @@
                     expr = "(builtins.getFlake \"/etc/nixos\").nixosConfigurations.nixos-btw.config.home-manager.users.mollan";
                   };
                 };
-
                 formatting = {
                   command = [ "nixfmt" ];
                 };
@@ -100,6 +102,7 @@
           };
           zls.enable = true;
           lua_ls.enable = true;
+          clangd.enable = true;
           rust_analyzer = {
             enable = true;
             installCargo = false;
@@ -108,44 +111,102 @@
         };
       };
 
-      none-ls = {
-        enable = true;
-        sources.formatting.nixfmt.enable = true;
-      };
-
       treesitter = {
         enable = true;
         settings.highlight.enable = true;
-        grammarPackages = pkgs.vimPlugins.nvim-treesitter.allGrammars;
+        grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
+          nix
+          rust
+          zig
+          lua
+          python
+          cpp
+          c
+          css
+          json
+          yaml
+          toml
+          markdown
+          markdown_inline
+          bash
+          zsh
+        ];
       };
 
-      cmp = {
+      conform-nvim = {
         enable = true;
-        autoEnableSources = true;
         settings = {
-          sources = [
-            { name = "nvim_lsp"; }
-            { name = "buffer"; }
-            { name = "path"; }
-          ];
-          mapping = {
-            "<Tab>" = "cmp.mapping.select_next_item()";
-            "<S-Tab>" = "cmp.mapping.select_prev_item()";
-            "<CR>" = "cmp.mapping.confirm({ select = true })";
-            "<C-Space>" = "cmp.mapping.complete()";
+          format_on_save = {
+            timeout_ms = 500;
+            lsp_fallback = true;
+          };
+          formatters_by_ft = {
+            nix = [ "nixfmt" ];
+            rust = [ "rustfmt" ];
+            zig = [ "zigfmt" ];
+            lua = [ "stylua" ];
+            python = [ "ruff_format" ];
+            cpp = [ "clang_format" ];
           };
         };
       };
 
-      telescope.enable = true;
+      blink-cmp = {
+        enable = true;
 
-      nvim-autopairs.enable = true;
+        settings = {
+          keymap = {
+            preset = "super-tab";
+          };
 
-      gitsigns.enable = true;
+          appearance = {
+            nerd_font_variant = "mono";
+            use_nvim_cmp_as_default = true;
+          };
 
-      lualine.enable = true;
+          completion = {
+            menu = {
+              auto_show = true;
+            };
+            documentation = {
+              auto_show = true;
+              auto_show_delay_ms = 300;
+            };
+            ghost_text = {
+              enabled = true;
+            };
+          };
 
-      web-devicons.enable = true;
+          sources = {
+            default = [
+              "lsp"
+              "snippets"
+              "path"
+              "buffer"
+            ];
+
+            providers = {
+              lsp = {
+                score_offset = 1000;
+              };
+              snippets = {
+                score_offset = 750;
+              };
+              path = {
+                score_offset = 650;
+              };
+              buffer = {
+                score_offset = 500;
+                max_items = 5;
+              };
+            };
+          };
+
+          snippets = {
+            preset = "luasnip";
+          };
+        };
+      };
 
       oil = {
         enable = true;
@@ -164,6 +225,47 @@
           };
         };
       };
+
+      mini = {
+        enable = true;
+        modules = {
+          icons = { };
+          starter = { };
+          surround = { };
+          comment = { };
+          move = { };
+        };
+      };
+
+      telescope = {
+        enable = true;
+        extensions = {
+          fzf-native.enable = true;
+          ui-select.enable = true;
+        };
+      };
+
+      nvim-autopairs.enable = true;
+
+      indent-blankline.enable = true;
+
+      fidget.enable = true;
+
+      illuminate.enable = true;
+
+      luasnip.enable = true;
+
+      gitsigns.enable = true;
+
+      which-key.enable = true;
+
+      trouble.enable = true;
+
+      lualine.enable = true;
+
+      web-devicons.enable = true;
+
+      todo-comments.enable = true;
     };
   };
 }
