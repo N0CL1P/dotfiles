@@ -26,6 +26,7 @@
       wrap = false;
       swapfile = false;
       undofile = true;
+      undodir = [ "/home/mollan/.local/share/nvim/undo" ];
       timeoutlen = 300;
       updatetime = 250;
       ignorecase = true;
@@ -35,6 +36,8 @@
       smoothscroll = true;
       clipboard = "unnamedplus";
     };
+
+    globals.mapleader = " ";
 
     keymaps = [
       {
@@ -146,7 +149,7 @@
     ];
 
     diagnostics = {
-      virtual_lines = true;
+      virtual_lines = false;
       virtual_text = false;
       signs = true;
       underline = true;
@@ -224,7 +227,6 @@
           markdown
           markdown_inline
           bash
-          zsh
         ];
       };
 
@@ -233,7 +235,7 @@
         settings = {
           format_on_save = {
             timeout_ms = 500;
-            lsp_fallback = true;
+            lsp_format = "fallback";
           };
           formatters_by_ft = {
             nix = [ "nixfmt" ];
@@ -260,6 +262,11 @@
           };
 
           completion = {
+            accept = {
+              auto_brackets = {
+                enabled = true;
+              };
+            };
             menu = {
               auto_show = true;
             };
@@ -323,6 +330,7 @@
 
       mini = {
         enable = true;
+        mockDevIcons = true;
         modules = {
           icons = { };
           starter = { };
@@ -379,8 +387,6 @@
 
       flash.enable = true;
 
-      nvim-autopairs.enable = true;
-
       indent-blankline.enable = true;
 
       fidget.enable = true;
@@ -414,8 +420,6 @@
       };
 
       lualine.enable = true;
-
-      web-devicons.enable = true;
 
       todo-comments.enable = true;
     };
