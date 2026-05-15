@@ -32,6 +32,7 @@
       smartcase = true;
       splitbelow = true;
       splitright = true;
+      smoothscroll = true;
       clipboard = "unnamedplus";
     };
 
@@ -92,11 +93,6 @@
         options.desc = "Open oil (float)";
       }
       {
-        key = "<leader>xx";
-        action = "<cmd>Trouble diagnostics toggle<CR>";
-        options.desc = "Open trouble";
-      }
-      {
         key = "]c";
         action = "<cmd>Gitsigns next_hunk<CR>";
         options.desc = "Next hunk";
@@ -116,7 +112,52 @@
         action = "<cmd>Gitsigns preview_hunk<CR>";
         options.desc = "Preview hunk";
       }
+      {
+        key = "<C-t>";
+        action = "<cmd>ToggleTerm<CR>";
+        mode = [
+          "n"
+          "t"
+        ];
+      }
+      {
+        key = "s";
+        action = "<cmd>lua require('flash').jump()<CR>";
+        mode = [
+          "n"
+          "x"
+          "o"
+        ];
+      }
+      {
+        key = "S";
+        action = "<cmd>lua require('flash').treesitter()<CR>";
+        mode = [
+          "n"
+          "x"
+          "o"
+        ];
+      }
+      {
+        key = "<leader>tl";
+        action = "<cmd>lua require('lsp_lines').toggle()<CR>";
+        options.desc = "Toggle lsp-lines";
+      }
     ];
+
+    diagnostics = {
+      virtual_lines = true;
+      virtual_text = false;
+      signs = true;
+      underline = true;
+      update_in_insert = false;
+      severity_sort = true;
+      float = {
+        border = "rounded";
+        source = "always";
+        header = "";
+      };
+    };
 
     plugins = {
       lsp = {
@@ -316,24 +357,61 @@
         };
       };
 
-      nvim-autopairs.enable = true;
-
-      indent-blankline.enable = true;
-
-      fidget.enable = true;
+      toggleterm = {
+        enable = true;
+        settings = {
+          direction = "float";
+          float_opts.border = "curved";
+        };
+      };
 
       illuminate = {
         enable = true;
         settings.delay = 300;
       };
 
+      gitsigns = {
+        enable = true;
+        settings.current_line_blame = true;
+      };
+
+      lsp-lines.enable = true;
+
+      flash.enable = true;
+
+      nvim-autopairs.enable = true;
+
+      indent-blankline.enable = true;
+
+      fidget.enable = true;
+
       luasnip.enable = true;
 
-      gitsigns.enable = true;
-
-      which-key.enable = true;
-
-      trouble.enable = true;
+      which-key = {
+        enable = true;
+        settings = {
+          spec = [
+            {
+              __unkeyed-1 = "gc";
+              group = "Comment";
+              mode = [
+                "n"
+                "x"
+                "o"
+              ];
+            }
+            {
+              __unkeyed-1 = "gs";
+              group = "Surround";
+              mode = [
+                "n"
+                "x"
+                "o"
+              ];
+            }
+          ];
+        };
+      };
 
       lualine.enable = true;
 
@@ -341,5 +419,15 @@
 
       todo-comments.enable = true;
     };
+
+    extraConfigLua = ''
+      vim.api.nvim_create_autocmd("LspAttach", {
+        callback = function()
+          for _, key in ipairs({ "grn", "grr", "gra", "gri", "grt", "grx" }) do
+            pcall(vim.keymap.del, "n", key)
+          end
+        end,
+      })
+    '';
   };
 }
