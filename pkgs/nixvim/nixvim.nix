@@ -395,16 +395,6 @@
         settings.current_line_blame = true;
       };
 
-      lsp-lines.enable = true;
-
-      flash.enable = true;
-
-      indent-blankline.enable = true;
-
-      fidget.enable = true;
-
-      luasnip.enable = true;
-
       which-key = {
         enable = true;
         settings = {
@@ -430,6 +420,16 @@
           ];
         };
       };
+
+      lsp-lines.enable = true;
+
+      flash.enable = true;
+
+      indent-blankline.enable = true;
+
+      fidget.enable = true;
+
+      luasnip.enable = true;
 
       lualine.enable = true;
 
