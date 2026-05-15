@@ -142,7 +142,7 @@
         ];
       }
       {
-        key = "<leader>tl";
+        key = "<leader>lt";
         action = "<cmd>lua require('lsp_lines').toggle()<CR>";
         options.desc = "Toggle lsp-lines";
       }
