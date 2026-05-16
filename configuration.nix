@@ -71,21 +71,7 @@
   };
 
   services = {
-    greetd = {
-      enable = true;
-      settings = {
-        default_session = {
-          command = ''
-            ${pkgs.tuigreet}/bin/tuigreet \
-            --time \
-            --remember \
-            --remember-session \
-            --greeting 'Добро пожаловать'
-          '';
-          user = "greeter";
-        };
-      };
-    };
+    displayManager.ly.enable = true;
     power-profiles-daemon.enable = true;
     accounts-daemon.enable = true;
     printing.enable = false;
