@@ -22,6 +22,7 @@
     ./pkgs/zig/zig.nix
     ./pkgs/rust/rustc.nix
     ./pkgs/rust/cargo.nix
+    ./pkgs/python/python3.nix
     ./pkgs/btop/btop.nix
     ./pkgs/wiremix/wiremix.nix
     ./pkgs/wl-clipboard/wl-clipboard.nix
