@@ -6,6 +6,7 @@
     ./pkgs/eza/eza.nix
     ./pkgs/ripgrep/ripgrep.nix
     ./pkgs/fd/fd.nix
+    ./pkgs/direnv/direnv.nix
     ./pkgs/nixvim/nixvim.nix
     ./pkgs/obsidian/obsidian.nix
     ./pkgs/spicetify/spicetify.nix
@@ -22,7 +23,6 @@
     ./pkgs/zig/zig.nix
     ./pkgs/rust/rustc.nix
     ./pkgs/rust/cargo.nix
-    ./pkgs/python/python3.nix
     ./pkgs/btop/btop.nix
     ./pkgs/wiremix/wiremix.nix
     ./pkgs/wl-clipboard/wl-clipboard.nix
