@@ -34,7 +34,6 @@
     ./pkgs/xwayland-satellite/xwayland-satellite.nix
     ./pkgs/vulkan-tools/vulkan-tools.nix
     ./pkgs/mesa-demos/mesa-demos.nix
-    ./pkgs/cursors/cursors.nix
   ];
 
   home.username = "mollan";
@@ -57,16 +56,43 @@
     };
   };
 
+  dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
+    };
+  };
+  gtk = {
+    enable = true;
+    theme = {
+      name = "adw-gtk3-dark";
+      package = pkgs.adw-gtk3;
+    };
+    gtk3.extraConfig = {
+      gtk-application-prefer-dark-theme = 1;
+    };
+    gtk4.extraConfig = {
+      gtk-application-prefer-dark-theme = 1;
+    };
+  };
+  qt = {
+    enable = true;
+    platformTheme.name = "adwaita";
+    style = {
+      name = "adwaita-dark";
+      package = pkgs.adwaita-qt;
+    };
+  };
+
   home.pointerCursor = {
     gtk.enable = true;
     x11.enable = true;
-    name = "Bibata-Modern-Ice";
-    package = pkgs.bibata-cursors;
+    name = "WhiteSur-cursors";
+    package = pkgs.whitesur-cursors;
     size = 24;
   };
 
   home.sessionVariables = {
-    XCURSOR_THEME = "Bibata-Modern-Ice";
+    XCURSOR_THEME = "WhiteSur-cursors";
     XCURSOR_SIZE = "24";
     TERMINAL = "kitty";
   };
