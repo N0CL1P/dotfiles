@@ -10,6 +10,8 @@
     ./pkgs/nixvim/nixvim.nix
     ./pkgs/obsidian/obsidian.nix
     ./pkgs/spicetify/spicetify.nix
+    ./pkgs/mpv/mpv.nix
+    ./pkgs/imv/imv.nix
     ./pkgs/zsh/zsh.nix
     ./pkgs/oh-my-posh/oh-my-posh.nix
     ./pkgs/fastfetch/fastfetch.nix
@@ -28,7 +30,7 @@
     ./pkgs/wl-clipboard/wl-clipboard.nix
     ./pkgs/telegram-desktop/telegram-desktop.nix
     ./pkgs/discord/discord.nix
-    ./pkgs/libreoffice/libreoffice.nix
+    ./pkgs/onlyoffice/onlyoffice.nix
     ./pkgs/prismlauncher/prismlauncher.nix
     ./pkgs/keepassxc/keepassxc.nix
     ./pkgs/xwayland-satellite/xwayland-satellite.nix
