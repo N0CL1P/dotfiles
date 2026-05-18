@@ -6,6 +6,7 @@
     ./pkgs/eza/eza.nix
     ./pkgs/ripgrep/ripgrep.nix
     ./pkgs/fd/fd.nix
+    ./pkgs/cava/cava.nix
     ./pkgs/direnv/direnv.nix
     ./pkgs/nixvim/nixvim.nix
     ./pkgs/obsidian/obsidian.nix
