@@ -122,8 +122,10 @@
 
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
+    noto-fonts
     noto-fonts-color-emoji
     twitter-color-emoji
+    liberation_ttf
   ];
 
   system.stateVersion = "25.11";
