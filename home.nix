@@ -17,6 +17,7 @@
     ./pkgs/oh-my-posh/oh-my-posh.nix
     ./pkgs/fastfetch/fastfetch.nix
     ./pkgs/git/git.nix
+    ./pkgs/ngrok/ngrok.nix
     ./pkgs/dms/dms.nix
     ./pkgs/river/river.nix
     ./pkgs/yazi/yazi.nix
