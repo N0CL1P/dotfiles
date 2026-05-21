@@ -21,7 +21,6 @@
     ./pkgs/dms/dms.nix
     ./pkgs/river/river.nix
     ./pkgs/yazi/yazi.nix
-    ./pkgs/ncmpcpp/ncmpcpp.nix
     ./pkgs/kitty/kitty.nix
     ./pkgs/fuzzel/fuzzel.nix
     ./pkgs/zig/zig.nix
@@ -44,21 +43,6 @@
   home.homeDirectory = "/home/mollan";
   home.stateVersion = "26.05";
   # systemd.user.services.niri-flake-polkit.enable = false;
-
-  services = {
-    mpd = {
-      enable = true;
-      musicDirectory = "/home/mollan/Music";
-      network.listenAddress = "127.0.0.1";
-      network.port = 6600;
-      extraConfig = ''
-        audio_output {
-          type "pipewire"
-          name "PipeWire Output"
-        }
-      '';
-    };
-  };
 
   dconf.settings = {
     "org/gnome/desktop/interface" = {

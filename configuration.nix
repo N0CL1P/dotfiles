@@ -3,7 +3,7 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ./minecraft/minecraft-server-1.nix
+    # ./minecraft/minecraft-server-1.nix
   ];
 
   boot = {
