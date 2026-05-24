@@ -9,10 +9,14 @@
     ./pkgs/cava/cava.nix
     ./pkgs/direnv/direnv.nix
     ./pkgs/nixvim/nixvim.nix
+    ./pkgs/zed-editor/zed-editor.nix
     ./pkgs/obsidian/obsidian.nix
     ./pkgs/spicetify/spicetify.nix
     ./pkgs/mpv/mpv.nix
     ./pkgs/imv/imv.nix
+    ./pkgs/reaper/reaper.nix
+    ./pkgs/inkscape/inkscape.nix
+    ./pkgs/glslviewer/glslviewer.nix
     ./pkgs/zsh/zsh.nix
     ./pkgs/oh-my-posh/oh-my-posh.nix
     ./pkgs/fastfetch/fastfetch.nix
