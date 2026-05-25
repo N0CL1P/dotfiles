@@ -129,5 +129,7 @@
     liberation_ttf
   ];
 
+  documentation.nixos.enable = false;
+
   system.stateVersion = "25.11";
 }
