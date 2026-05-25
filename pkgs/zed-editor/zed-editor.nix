@@ -11,6 +11,7 @@
       "glsl"
     ];
     userSettings = {
+      theme = "JetBrains Islands Dark";
       telemetry = {
         metrics = false;
         diagnostics = false;
