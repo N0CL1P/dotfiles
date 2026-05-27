@@ -8,7 +8,6 @@
     ./pkgs/fd/fd.nix
     ./pkgs/cava/cava.nix
     ./pkgs/direnv/direnv.nix
-    ./pkgs/nixvim/nixvim.nix
     ./pkgs/zed-editor/zed-editor.nix
     ./pkgs/helix/helix.nix
     ./pkgs/obsidian/obsidian.nix

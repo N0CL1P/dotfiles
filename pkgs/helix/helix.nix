@@ -2,6 +2,7 @@
 {
   programs.helix = {
     enable = true;
+    defaultEditor = true;
     settings = {
       theme = "dark_plus";
       editor = {
@@ -9,7 +10,7 @@
         bufferline = "multiple";
         color-modes = true;
         true-color = true;
-        rulers = [120];
+        rulers = [ 120 ];
         auto-format = true;
         cursor-shape = {
           insert = "bar";

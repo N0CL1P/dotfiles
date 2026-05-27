@@ -17,8 +17,9 @@
       ls = "eza";
       ll = "eza -lh --icons --git";
       lt = "eza -lh --icons --git -T";
-      svim = "sudo nvim -u ~/.config/nvim/init.lua";
-      vim = "nvim";
+      vim = "hx";
+      x = "hx";
+      sx = "doas hx -c ~/.config/helix/config.toml";
       update = "git -C ~/dotfiles add -A && nh os switch";
       nfu = "nix flake update";
       dotfiles-push = "git -C ~/dotfiles add -A && git -C ~/dotfiles commit -m 'update' && git -C ~/dotfiles push";
