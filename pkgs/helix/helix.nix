@@ -12,13 +12,21 @@
         true-color = true;
         rulers = [ 120 ];
         auto-format = true;
+        search.smart-case = true;
+        file-picker.hidden = false;
+        indent-guides.render = true;
         cursor-shape = {
           insert = "bar";
           normal = "block";
           select = "underline";
         };
-        indent-guides = {
-          render = true;
+        whitespace.render = {
+          tab = "all";
+          newline = "none";
+        };
+        lsp = {
+          display-messages = true;
+          display-inlay-hints = true;
         };
       };
     };
@@ -26,6 +34,7 @@
       language = [
         {
           name = "nix";
+          auto-format = true;
           formatter = {
             command = "nixfmt";
           };
@@ -43,6 +52,7 @@
       pkgs.taplo
       pkgs.glsl_analyzer
       pkgs.bash-language-server
+      pkgs.marksman
     ];
   };
 }
