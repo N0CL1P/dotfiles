@@ -1,5 +1,4 @@
 { pkgs, ... }:
-
 {
   imports = [
     ./hardware-configuration.nix
@@ -43,6 +42,23 @@
   security = {
     rtkit.enable = true;
     polkit.enable = true;
+    sudo.enable = false;
+    doas = {
+      enable = true;
+      extraRules = [
+        {
+          groups = [ "wheel" ];
+          keepEnv = true;
+          persist = true;
+        }
+      ];
+    };
+    wrappers.sudo = {
+      setuid = true;
+      owner = "root";
+      group = "root";
+      source = "${pkgs.doas}/bin/doas";
+    };
   };
 
   networking = {
@@ -105,7 +121,13 @@
       enable = true;
       remotePlay.openFirewall = true;
       dedicatedServer.openFirewall = true;
-      extraCompatPackages = [ pkgs.proton-ge-bin ];
+      extraCompatPackages = [
+        pkgs.proton-ge-bin
+      ];
+      fontPackages = [
+        pkgs.noto-fonts
+        pkgs.liberation_ttf
+      ];
     };
   };
 
@@ -123,10 +145,8 @@
 
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
-    noto-fonts
     noto-fonts-color-emoji
     twitter-color-emoji
-    liberation_ttf
   ];
 
   documentation.nixos.enable = false;

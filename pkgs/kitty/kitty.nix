@@ -2,7 +2,10 @@
 {
   programs.kitty = {
     enable = true;
-    shellIntegration.enableZshIntegration = true;
+    shellIntegration = {
+      enableZshIntegration = true;
+      mode = "no-sudo";
+    };
 
     font = {
       name = "JetBrainsMono Nerd Font";
