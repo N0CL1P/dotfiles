@@ -117,6 +117,10 @@
         dates = "weekly";
       };
     };
+    localsend = {
+      enable = true;
+      openFirewall = true;
+    };
     steam = {
       enable = true;
       remotePlay.openFirewall = true;
@@ -124,7 +128,7 @@
       extraCompatPackages = [
         pkgs.proton-ge-bin
       ];
-      fontPackages = [
+      extraPackages = [
         pkgs.noto-fonts
         pkgs.liberation_ttf
       ];
