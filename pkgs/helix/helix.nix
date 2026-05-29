@@ -31,13 +31,20 @@
       };
     };
     languages = {
+      language-server.qmlls = {
+        command = "qmlls";
+        args = [ "-E" ];
+      };
       language = [
         {
           name = "nix";
           auto-format = true;
-          formatter = {
-            command = "nixfmt";
-          };
+          formatter.command = "nixfmt";
+        }
+        {
+          name = "qml";
+          auto-format = true;
+          language-servers = [ "qmlls" ];
         }
       ];
     };
@@ -53,6 +60,7 @@
       pkgs.glsl_analyzer
       pkgs.bash-language-server
       pkgs.marksman
+      pkgs.kdePackages.qtdeclarative
     ];
   };
 }

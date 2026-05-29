@@ -10,10 +10,6 @@
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixvim = {
-      url = "github:nix-community/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     niri = {
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -55,7 +51,6 @@
               sharedModules = [
                 inputs.niri.homeModules.niri
                 inputs.spicetify-nix.homeManagerModules.default
-                inputs.nixvim.homeModules.default
                 inputs.dms.homeModules.dank-material-shell
                 inputs.dms.homeModules.niri
               ];

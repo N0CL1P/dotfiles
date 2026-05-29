@@ -94,6 +94,7 @@
     printing.enable = false;
     pulseaudio.enable = false;
     lact.enable = true;
+    cloudflare-warp.enable = true;
     pipewire = {
       enable = true;
       alsa.enable = true;

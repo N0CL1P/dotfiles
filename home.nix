@@ -22,6 +22,7 @@
     ./pkgs/git/git.nix
     ./pkgs/ngrok/ngrok.nix
     ./pkgs/dms/dms.nix
+    ./pkgs/eww/eww.nix
     ./pkgs/river/river.nix
     ./pkgs/yazi/yazi.nix
     ./pkgs/kitty/kitty.nix
@@ -86,5 +87,6 @@
     XCURSOR_THEME = "WhiteSur-cursors";
     XCURSOR_SIZE = "24";
     TERMINAL = "kitty";
+    QML2_IMPORT_PATH = "${pkgs.qt6.qtbase}/lib/qt-6/qml:${pkgs.qt6.qtdeclarative}/lib/qt-6/qml";
   };
 }
