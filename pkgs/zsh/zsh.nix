@@ -2,17 +2,10 @@
 {
   programs.zsh = {
     enable = true;
-    oh-my-zsh = {
-      enable = true;
-      plugins = [
-        "git"
-        "z"
-        "sudo"
-      ];
-    };
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
+    autocd = true;
     shellAliases = {
       ls = "eza";
       ll = "eza -lh --icons --git";
@@ -34,5 +27,17 @@
         "cp *"
       ];
     };
+    initContent = ''
+      _git_branch() {
+        local branch dirty
+        branch=$(git branch --show-current 2>/dev/null)
+        [[ -z $branch ]] && return
+        git diff --quiet 2>/dev/null || dirty='*'
+        echo " %F{green}$branch%F{yellow}$dirty%f"
+      }
+      setopt PROMPT_SUBST
+      PROMPT='%n%F{red}@%f%m %F{214}%~%f$(_git_branch)
+      %(?:%F{green}:%F{red})$%f '
+    '';
   };
 }

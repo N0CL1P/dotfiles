@@ -27,24 +27,55 @@
         lsp = {
           display-messages = true;
           display-inlay-hints = true;
+          display-color-swatches = true;
         };
       };
     };
     languages = {
-      language-server.qmlls = {
-        command = "qmlls";
-        args = [ "-E" ];
+      language-server = {
+        tailwindcss-language-server = {
+          command = "tailwindcss-language-server";
+          args = [ "--stdio" ];
+        };
+        vscode-css-language-server = {
+          command = "vscode-css-language-server";
+          args = [ "--stdio" ];
+        };
+        vscode-html-language-server = {
+          command = "vscode-html-language-server";
+          args = [ "--stdio" ];
+        };
       };
       language = [
         {
           name = "nix";
           auto-format = true;
           formatter.command = "nixfmt";
+          language-servers = [ "nixd" ];
         }
         {
-          name = "qml";
+          name = "css";
           auto-format = true;
-          language-servers = [ "qmlls" ];
+          language-servers = [
+            "vscode-css-language-server"
+            "tailwindcss-language-server"
+          ];
+        }
+        {
+          name = "scss";
+          auto-format = true;
+          language-servers = [
+            "vscode-css-language-server"
+            "tailwindcss-language-server"
+          ];
+        }
+        {
+          name = "html";
+          auto-format = true;
+          language-servers = [
+            "vscode-html-language-server"
+            "tailwindcss-language-server"
+          ];
         }
       ];
     };
@@ -57,10 +88,12 @@
       pkgs.ruff
       pkgs.lua-language-server
       pkgs.taplo
+      pkgs.prettier
+      pkgs.vscode-langservers-extracted
+      pkgs.tailwindcss-language-server
       pkgs.glsl_analyzer
       pkgs.bash-language-server
       pkgs.marksman
-      pkgs.kdePackages.qtdeclarative
     ];
   };
 }

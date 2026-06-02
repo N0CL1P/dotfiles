@@ -5,6 +5,8 @@
     ./pkgs/niri/niri.nix
     ./pkgs/eza/eza.nix
     ./pkgs/ripgrep/ripgrep.nix
+    ./pkgs/zoxide/zoxide.nix
+    ./pkgs/ouch/ouch.nix
     ./pkgs/fd/fd.nix
     ./pkgs/cava/cava.nix
     ./pkgs/direnv/direnv.nix
@@ -17,7 +19,6 @@
     ./pkgs/inkscape/inkscape.nix
     ./pkgs/glslviewer/glslviewer.nix
     ./pkgs/zsh/zsh.nix
-    ./pkgs/oh-my-posh/oh-my-posh.nix
     ./pkgs/fastfetch/fastfetch.nix
     ./pkgs/git/git.nix
     ./pkgs/ngrok/ngrok.nix
