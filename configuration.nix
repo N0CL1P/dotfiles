@@ -90,7 +90,6 @@
   services = {
     displayManager.ly.enable = true;
     power-profiles-daemon.enable = true;
-    accounts-daemon.enable = true;
     printing.enable = false;
     pulseaudio.enable = false;
     lact.enable = true;
