@@ -36,8 +36,8 @@
         echo " %F{green}$branch%F{yellow}$dirty%f"
       }
       setopt PROMPT_SUBST
-      PROMPT='%n%F{red}@%f%m %F{214}%~%f$(_git_branch)
-      %(?:%F{green}:%F{red})$%f '
+      PROMPT='%n@%m %F{214}%~%f$(_git_branch)
+      %(?:%F{white}:%F{red})$%f '
     '';
   };
 }
