@@ -1,6 +1,6 @@
 { ... }:
 {
-  import = [
+  imports = [
     ./btop
     ./glslviewer
     ./inkscape

@@ -1,6 +1,6 @@
 { ... }:
 {
-  import = [
+  imports = [
     ./cava
     ./direnv
     ./discord

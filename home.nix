@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./hm-module
+    ./hm-modules
     ./user-pkgs
   ];
 

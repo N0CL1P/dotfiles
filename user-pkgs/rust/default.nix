@@ -1,6 +1,6 @@
 { ... }:
 {
-  import = [
+  imports = [
     ./rustc.nix
     ./cargo.nix
   ];
