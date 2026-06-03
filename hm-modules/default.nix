@@ -1,0 +1,30 @@
+{ ... }:
+{
+  import = [
+    ./cava
+    ./direnv
+    ./discord
+    ./dms
+    ./eww
+    ./eza
+    ./fastfetch
+    ./fd
+    ./fuzzel
+    ./git
+    ./helix
+    ./imv
+    ./keepassxc
+    ./kitty
+    ./mpv
+    ./niri
+    ./obsidian
+    ./onlyoffice
+    ./prismlauncher
+    ./ripgrep
+    ./river
+    ./spicetify
+    ./yazi
+    ./zoxide
+    ./zsh
+  ];
+}
