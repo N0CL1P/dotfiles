@@ -32,8 +32,8 @@
       tab_bar_style = "powerline";
 
       dynamic_background_opacity = "yes";
-      background_opacity = "0.69";
-      background_blur = 10;
+      background_opacity = 0.86;
+      background_blur = 0;
 
       foreground = "#d4d4d4";
       background = "#1e1e1e";
