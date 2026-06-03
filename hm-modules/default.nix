@@ -1,30 +1,35 @@
 { ... }:
 {
   imports = [
-    ./cava
-    ./direnv
+    # gui
+    ./imv
+    ./mpv
+    ./keepassxc
+    ./obsidian
+    ./spicetify
     ./discord
-    ./dms
-    ./eww
+    ./onlyoffice
+    ./prismlauncher
+
+    # cli/tui
+    ./git
     ./eza
     ./fastfetch
     ./fd
-    ./fuzzel
-    ./git
+    ./cava
+    ./direnv
     ./helix
-    ./imv
-    ./keepassxc
-    ./kitty
-    ./mpv
-    ./niri
-    ./obsidian
-    ./onlyoffice
-    ./prismlauncher
     ./ripgrep
-    ./river
-    ./spicetify
     ./yazi
     ./zoxide
+
+    # sys
+    ./niri
+    ./kitty
     ./zsh
+    ./fuzzel
+    ./dms
+    ./eww
+    # ./river
   ];
 }

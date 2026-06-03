@@ -1,19 +1,27 @@
 { ... }:
 {
   imports = [
-    ./btop
-    ./glslviewer
-    ./inkscape
-    ./mesa-demos
-    ./ngrok
-    ./ouch
-    ./reaper
-    ./rust
+    # gui
     ./telegram-desktop
-    ./vulkan-tools
+    ./blender
+    ./reaper
+    ./inkscape
+
+    # cli/tui
+    ./glslviewer
+    ./btop
+    ./ngrok
     ./wiremix
+    ./ouch
+
+    # sys
+    ./mesa-demos
+    ./vulkan-tools
     ./wl-clipboard
     ./xwayland-satellite
+
+    # lang
+    ./rust
     ./zig
   ];
 }
