@@ -12,15 +12,6 @@
     initrd.kernelModules = [ "amdgpu" ];
   };
 
-  fileSystems."/mnt/data" = {
-    device = "/dev/disk/by-uuid/8118b562-d1ca-4c7c-b9b1-5f2c0ea5d6d1";
-    fsType = "ext4";
-    options = [
-      "defaults"
-      "nofail"
-    ];
-  };
-
   hardware = {
     amdgpu.opencl.enable = true;
     graphics = {
