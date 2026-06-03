@@ -5,6 +5,32 @@
     defaultEditor = true;
     settings = {
       theme = "dark_plus";
+      keys.normal = {
+        "A-j" = [
+          "extend_to_line_bounds"
+          "delete_selection"
+          "paste_after"
+        ];
+        "A-k" = [
+          "extend_to_line_bounds"
+          "delete_selection"
+          "move_line_up"
+          "paste_before"
+        ];
+      };
+      keys.select = {
+        "A-j" = [
+          "extend_to_line_bounds"
+          "delete_selection"
+          "paste_after"
+        ];
+        "A-k" = [
+          "extend_to_line_bounds"
+          "delete_selection"
+          "move_line_up"
+          "paste_before"
+        ];
+      };
       editor = {
         line-number = "relative";
         bufferline = "multiple";
