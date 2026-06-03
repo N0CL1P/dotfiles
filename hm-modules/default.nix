@@ -7,7 +7,7 @@
     ./keepassxc
     ./obsidian
     ./spicetify
-    ./discord
+    ./vesktop
     ./onlyoffice
     ./prismlauncher
 

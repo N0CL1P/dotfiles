@@ -2,7 +2,7 @@
 {
   imports = [
     # gui
-    ./telegram-desktop
+    ./ayugram-desktop
     ./blender
     ./reaper
     ./inkscape

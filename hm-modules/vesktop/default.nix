@@ -1,6 +1,6 @@
 { ... }:
 {
-  programs.discord = {
+  programs.vesktop = {
     enable = true;
   };
 }

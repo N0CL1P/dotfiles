@@ -119,10 +119,6 @@
       extraCompatPackages = [
         pkgs.proton-ge-bin
       ];
-      extraPackages = [
-        pkgs.noto-fonts
-        pkgs.liberation_ttf
-      ];
     };
   };
 
@@ -142,6 +138,8 @@
     nerd-fonts.jetbrains-mono
     noto-fonts-color-emoji
     twitter-color-emoji
+    noto-fonts
+    liberation_ttf
   ];
 
   documentation.nixos.enable = false;
