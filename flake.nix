@@ -14,10 +14,6 @@
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    dms = {
-      url = "github:AvengeMedia/DankMaterialShell/stable";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     zen-browser = {
       url = "github:youwen5/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -51,8 +47,6 @@
               sharedModules = [
                 inputs.niri.homeModules.niri
                 inputs.spicetify-nix.homeManagerModules.default
-                inputs.dms.homeModules.dank-material-shell
-                inputs.dms.homeModules.niri
               ];
             };
 

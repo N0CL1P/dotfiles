@@ -28,7 +28,6 @@
     ./kitty
     ./zsh
     ./fuzzel
-    ./dms
     ./eww
     # ./river
   ];
