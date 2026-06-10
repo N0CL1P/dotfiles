@@ -80,6 +80,9 @@
       spawn-at-startup = [
         {
           command = [
+            "eww"
+            "open"
+            "wlbar"
           ];
         }
       ];

@@ -4,6 +4,7 @@
     # gui
     ./imv
     ./mpv
+    ./zed-editor
     ./keepassxc
     ./obsidian
     ./spicetify
@@ -28,6 +29,7 @@
     ./kitty
     ./zsh
     ./fuzzel
+    ./quickshell
     ./eww
     # ./river
   ];

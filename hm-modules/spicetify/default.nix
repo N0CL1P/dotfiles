@@ -18,7 +18,6 @@
       ];
       enabledCustomApps = with spicePkgs.apps; [
         newReleases
-        ncsVisualizer
       ];
 
       theme = spicePkgs.themes.matte;

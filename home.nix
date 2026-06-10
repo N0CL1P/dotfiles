@@ -9,7 +9,6 @@
   home.username = "mollan";
   home.homeDirectory = "/home/mollan";
   home.stateVersion = "26.05";
-  # systemd.user.services.niri-flake-polkit.enable = false;
 
   dconf.settings = {
     "org/gnome/desktop/interface" = {
@@ -36,6 +35,10 @@
       name = "adwaita-dark";
       package = pkgs.adwaita-qt;
     };
+  };
+
+  services.mako = {
+    enable = true;
   };
 
   home.pointerCursor = {
