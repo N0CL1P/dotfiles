@@ -17,6 +17,7 @@
   boot.initrd.availableKernelModules = [
     "xhci_pci"
     "ahci"
+    "usb_storage"
     "usbhid"
     "sd_mod"
   ];
@@ -25,7 +26,7 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/34f68eb3-c694-4c51-87cf-b64d45268ae1";
+    device = "/dev/disk/by-uuid/872d6177-d1e0-4868-9e32-3129ba875ee9";
     fsType = "ext4";
   };
 
@@ -39,7 +40,7 @@
   };
 
   fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/F5EA-8269";
+    device = "/dev/disk/by-uuid/5A9E-8258";
     fsType = "vfat";
     options = [
       "fmask=0077"
@@ -48,7 +49,7 @@
   };
 
   swapDevices = [
-    { device = "/dev/disk/by-uuid/ed13917f-0704-49d9-b9fb-2f88a132deda"; }
+    { device = "/dev/disk/by-uuid/504963c6-193f-45e1-a7a8-85f068c2269b"; }
   ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
