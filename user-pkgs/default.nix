@@ -8,11 +8,12 @@
     ./inkscape
 
     # cli/tui
-    ./glslviewer
     ./btop
     ./ngrok
     ./wiremix
+    ./bluetui
     ./ouch
+    ./glslviewer
 
     # sys
     ./mesa-demos

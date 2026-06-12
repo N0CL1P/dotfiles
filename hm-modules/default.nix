@@ -30,7 +30,6 @@
     ./zsh
     ./fuzzel
     ./quickshell
-    ./eww
     # ./river
   ];
 }
