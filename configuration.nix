@@ -140,6 +140,7 @@
     twitter-color-emoji
     noto-fonts
     liberation_ttf
+    inter
   ];
 
   documentation.nixos.enable = false;
