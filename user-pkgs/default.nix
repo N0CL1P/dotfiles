@@ -16,10 +16,10 @@
     ./glslviewer
 
     # sys
+    ./xwayland-satellite
+    ./wl-clipboard
     ./mesa-demos
     ./vulkan-tools
-    ./wl-clipboard
-    ./xwayland-satellite
 
     # lang
     ./rust
