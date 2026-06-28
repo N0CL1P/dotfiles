@@ -6,7 +6,7 @@
       map.normal = {
         "Super+D" = "spawn rofi -show drun";
         "Super+Q" = "close";
-        "Super+T" = "kitty";
+        "Super+T" = "ghostty";
       };
       border-width = 2;
       background-color = "0x002b36";

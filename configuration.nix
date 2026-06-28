@@ -82,6 +82,7 @@
     displayManager.ly.enable = true;
     power-profiles-daemon.enable = true;
     printing.enable = false;
+    flatpak.enable = false;
     pulseaudio.enable = false;
     lact.enable = true;
     cloudflare-warp.enable = true;

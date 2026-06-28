@@ -95,9 +95,9 @@
         {
           "Mod+Shift+Slash".action = show-hotkey-overlay;
 
-          "Mod+T".action = spawn "kitty";
+          "Mod+T".action = spawn "ghostty";
           "Mod+D".action = spawn "fuzzel";
-          "Mod+E".action = spawn "kitty" "yazi";
+          "Mod+E".action = spawn "ghostty" "-e" "yazi";
           "Mod+Delete".action = spawn "wpctl" "set-mute" "@DEFAULT_SOURCE@" "toggle";
 
           "Mod+O" = {

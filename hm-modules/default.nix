@@ -26,7 +26,7 @@
 
     # sys
     ./niri
-    ./kitty
+    ./ghostty
     ./zsh
     ./fuzzel
     ./quickshell
