@@ -4,6 +4,7 @@
   imports = [
     ./hm-modules
     ./user-pkgs
+    ./config
   ];
 
   home.username = "mollan";
@@ -52,7 +53,7 @@
   home.sessionVariables = {
     XCURSOR_THEME = "WhiteSur-cursors";
     XCURSOR_SIZE = "24";
-    TERMINAL = "ghostty";
+    TERMINAL = "footclient";
     QML2_IMPORT_PATH = "${pkgs.qt6.qtbase}/lib/qt-6/qml:${pkgs.qt6.qtdeclarative}/lib/qt-6/qml";
   };
 }

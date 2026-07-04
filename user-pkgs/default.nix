@@ -4,7 +4,6 @@
     # gui
     ./ayugram-desktop
     ./blender
-    ./reaper
     ./inkscape
 
     # cli/tui
@@ -16,6 +15,7 @@
     ./glslviewer
 
     # sys
+    ./batman
     ./xwayland-satellite
     ./wl-clipboard
     ./mesa-demos

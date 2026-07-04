@@ -6,10 +6,7 @@
     enable = true;
     settings = {
       logo = {
-        source = "${./NixOS.png}";
-        padding = {
-          right = 1;
-        };
+        source = "none";
       };
       modules = [
         "title"

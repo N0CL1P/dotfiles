@@ -1,6 +1,6 @@
 { ... }:
 {
-  programs.cava = {
+  programs.bat = {
     enable = true;
   };
 }

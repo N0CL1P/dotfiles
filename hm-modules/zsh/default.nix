@@ -9,7 +9,9 @@
     shellAliases = {
       ls = "eza";
       ll = "eza -lh --icons --git";
+      la = "eza -lha --icons --git";
       lt = "eza -lh --icons --git -T";
+      man = "batman";
       vim = "hx";
       x = "hx";
       sx = "doas hx -c ~/.config/helix/config.toml";
@@ -27,17 +29,5 @@
         "cp *"
       ];
     };
-    initContent = ''
-      _git_branch() {
-        local branch dirty
-        branch=$(git branch --show-current 2>/dev/null)
-        [[ -z $branch ]] && return
-        git diff --quiet 2>/dev/null || dirty='*'
-        echo " %F{green}$branch%F{yellow}$dirty%f"
-      }
-      setopt PROMPT_SUBST
-      PROMPT='%n@%m %F{214}%~%f$(_git_branch)
-      %(?:%F{white}:%F{red})$%f '
-    '';
   };
 }

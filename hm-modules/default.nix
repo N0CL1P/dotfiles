@@ -4,7 +4,6 @@
     # gui
     ./imv
     ./mpv
-    ./zed-editor
     ./keepassxc
     ./obsidian
     ./spicetify
@@ -14,20 +13,21 @@
 
     # cli/tui
     ./git
-    ./eza
     ./fastfetch
-    ./fd
-    ./cava
     ./direnv
     ./helix
-    ./ripgrep
+    ./bat
     ./yazi
     ./zoxide
+    ./ripgrep
+    ./fzf
+    ./fd
+    ./eza
 
     # sys
-    ./niri
-    ./ghostty
+    ./foot
     ./zsh
+    ./starship
     ./fuzzel
     ./quickshell
     # ./river
