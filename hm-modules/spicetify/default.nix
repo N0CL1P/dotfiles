@@ -19,8 +19,5 @@
       enabledCustomApps = with spicePkgs.apps; [
         newReleases
       ];
-
-      theme = spicePkgs.themes.matte;
-      colorScheme = "gray-dark3";
     };
 }
