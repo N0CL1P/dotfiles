@@ -13,6 +13,7 @@
     ./bluetui
     ./ouch
     ./glslviewer
+    ./radare2
 
     # sys
     ./batman

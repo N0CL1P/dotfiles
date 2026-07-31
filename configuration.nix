@@ -128,7 +128,10 @@
         pkgs.obs-studio-plugins.obs-pipewire-audio-capture
       ];
     };
-
+    ghidra = {
+      enable = true;
+      gdb = true;
+    };
   };
 
   users.users.mollan = {
