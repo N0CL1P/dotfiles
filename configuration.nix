@@ -82,7 +82,7 @@
     displayManager.ly.enable = true;
     power-profiles-daemon.enable = true;
     printing.enable = false;
-    flatpak.enable = false;
+    flatpak.enable = true;
     pulseaudio.enable = false;
     lact.enable = true;
     cloudflare-warp.enable = true;
@@ -95,6 +95,9 @@
       wireplumber.enable = true;
     };
   };
+
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
   programs = {
     niri.enable = true;
