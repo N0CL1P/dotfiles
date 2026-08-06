@@ -4,6 +4,7 @@
     # gui
     ./imv
     ./mpv
+    ./zed-editor
     ./keepassxc
     ./obsidian
     ./spicetify
