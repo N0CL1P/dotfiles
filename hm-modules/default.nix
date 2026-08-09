@@ -30,7 +30,7 @@
     ./zsh
     ./starship
     ./fuzzel
-    ./ags
+    ./eww
     # ./river
   ];
 }
