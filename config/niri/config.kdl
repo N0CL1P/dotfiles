@@ -55,6 +55,19 @@ layout {
     center-focused-column "never"
 }
 
+window-rule {
+    geometry-corner-radius 12
+    clip-to-geometry true
+}
+
+blur {
+    on
+    passes 3
+    offset 3.0
+    noise 0.02
+    saturation 1.5
+}
+
 cursor {
     xcursor-theme "default"
     xcursor-size 24
