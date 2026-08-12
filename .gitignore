@@ -2,4 +2,8 @@ secrets.nix
 *.age
 result
 result-*
+direnv
 .direnv
+.clangd
+projects
+test

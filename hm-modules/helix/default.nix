@@ -3,8 +3,10 @@
   programs.helix = {
     enable = true;
     defaultEditor = true;
+
     settings = {
       theme = "dark_plus";
+
       keys.normal = {
         "A-j" = [
           "extend_to_line_bounds"
@@ -31,6 +33,7 @@
           "paste_before"
         ];
       };
+
       editor = {
         line-number = "relative";
         bufferline = "multiple";
@@ -57,6 +60,7 @@
         };
       };
     };
+
     languages = {
       language-server = {
         tailwindcss-language-server = {
@@ -71,8 +75,30 @@
           command = "vscode-html-language-server";
           args = [ "--stdio" ];
         };
+        clangd = {
+          command = "clangd";
+          args = [
+            "--query-driver=/nix/store/*/bin/gcc*"
+            "--query-driver=/nix/store/*/bin/g++*"
+            "--query-driver=/nix/store/*/bin/cc"
+            "--query-driver=/nix/store/*/bin/c++"
+            "--background-index"
+            "--clang-tidy"
+          ];
+        };
       };
+
       language = [
+        {
+          name = "c";
+          language-servers = [ "clangd" ];
+          auto-format = true;
+        }
+        {
+          name = "cpp";
+          language-servers = [ "clangd" ];
+          auto-format = true;
+        }
         {
           name = "nix";
           auto-format = true;
@@ -105,6 +131,7 @@
         }
       ];
     };
+
     extraPackages = [
       pkgs.nixd
       pkgs.nixfmt
