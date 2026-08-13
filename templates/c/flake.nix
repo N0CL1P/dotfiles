@@ -13,8 +13,8 @@
       devShells.${system}.default =
         pkgs.mkShell.override
           {
-            # stdenv = pkgs.gcc14Stdenv;
-            stdenv = pkgs.clangStdenv;
+            stdenv = pkgs.gcc14Stdenv;
+            # stdenv = pkgs.clangStdenv;
           }
           {
             packages = with pkgs; [
