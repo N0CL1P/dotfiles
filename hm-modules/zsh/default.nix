@@ -12,9 +12,8 @@
       la = "eza -lha --icons --git";
       lt = "eza -lh --icons --git -T";
       man = "batman";
-      vim = "hx";
-      x = "hx";
-      sx = "doas hx -c ~/.config/helix/config.toml";
+      vim = "nvim";
+      v = "nvim";
       update = "git -C ~/dotfiles add -A && nh os switch";
       nfu = "nix flake update";
       dotfiles-push = "git -C ~/dotfiles add -A && git -C ~/dotfiles commit -m 'update' && git -C ~/dotfiles push";

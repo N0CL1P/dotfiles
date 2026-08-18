@@ -4,7 +4,6 @@
     # gui
     ./imv
     ./mpv
-    ./zed-editor
     ./keepassxc
     ./obsidian
     ./spicetify
@@ -16,7 +15,7 @@
     ./git
     ./fastfetch
     ./direnv
-    ./helix
+    ./neovim
     ./bat
     ./yazi
     ./zoxide
@@ -26,7 +25,7 @@
     ./eza
 
     # sys
-    ./foot
+    ./ghostty
     ./zsh
     ./starship
     ./fuzzel
