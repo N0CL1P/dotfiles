@@ -88,8 +88,8 @@ binds {
     Ctrl+Print { screenshot-screen; }
 
     Mod+D { spawn "fuzzel"; }
-    Mod+T { spawn "ghostty" "+new-window"; }
-    Mod+E { spawn "ghostty" "+new-window" "-e" "yazi";}
+    Mod+T { spawn "footclient"; }
+    Mod+E { spawn "footclient" "yazi"; }
     Mod+Delete { spawn "wpctl" "set-mute" "@DEFAULT_SOURCE@" "toggle"; }
 
     Mod+H { focus-column-left; }

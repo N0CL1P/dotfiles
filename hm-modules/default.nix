@@ -15,7 +15,7 @@
     ./git
     ./fastfetch
     ./direnv
-    ./neovim
+    ./helix
     ./bat
     ./yazi
     ./zoxide
@@ -25,7 +25,7 @@
     ./eza
 
     # sys
-    ./ghostty
+    ./foot
     ./zsh
     ./starship
     ./fuzzel
