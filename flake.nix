@@ -6,15 +6,6 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    astal = {
-      url = "github:aylur/astal";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    ags = {
-      url = "github:aylur/ags";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.astal.follows = "astal";
-    };
     zen-browser = {
       url = "github:youwen5/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -51,7 +42,6 @@
               extraSpecialArgs = { inherit inputs; };
               sharedModules = [
                 inputs.spicetify-nix.homeManagerModules.default
-                inputs.ags.homeManagerModules.default
               ];
             };
 
