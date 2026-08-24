@@ -29,7 +29,7 @@
     ./zsh
     ./starship
     ./fuzzel
-    ./eww
+    ./noctalia
     # ./river
   ];
 }
