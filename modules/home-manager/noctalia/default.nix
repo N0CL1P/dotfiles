@@ -1,4 +1,4 @@
-{ ... }:
+{ config, ... }:
 {
   programs.noctalia = {
     enable = true;
@@ -6,10 +6,10 @@
 
     settings = {
       theme = {
-        builtin = "Catppuccin";
         community_palette = "Breeze";
+        custom_palette = "noctalia-wallpaper-mo";
         mode = "dark";
-        source = "community";
+        source = "custom";
 
         templates.builtin_ids = [
           "foot"
@@ -34,12 +34,15 @@
 
       bar = {
         order = "default";
+
         default = {
           start = [ "workspaces" ];
+
           center = [
             "clock"
             "media"
           ];
+
           end = [
             "tray"
             "notifications"
@@ -50,6 +53,7 @@
             "battery"
             "session"
           ];
+
           margin_ends = 0;
           radius = 0;
           thickness = 20;
@@ -58,6 +62,12 @@
 
         };
       };
+
+      shell.panel = {
+        shadow = false;
+      };
     };
   };
+
+  home.file.".config/noctalia/palettes".source = config.lib.file.mkOutOfStoreSymlink ./palettes;
 }
