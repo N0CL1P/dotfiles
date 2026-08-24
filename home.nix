@@ -37,10 +37,6 @@
     };
   };
 
-  services.mako = {
-    enable = true;
-  };
-
   home.pointerCursor = {
     enable = true;
     gtk.enable = true;

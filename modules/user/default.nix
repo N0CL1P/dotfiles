@@ -23,7 +23,6 @@
 
     # lang
     ./rust
-    ./zig
     ./qtdeclarative
   ];
 }
