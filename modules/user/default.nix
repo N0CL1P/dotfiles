@@ -10,7 +10,6 @@
     ./btop
     ./ngrok
     ./wiremix
-    ./bluetui
     ./ouch
     ./glslviewer
     ./radare2
