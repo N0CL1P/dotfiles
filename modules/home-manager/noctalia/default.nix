@@ -66,6 +66,11 @@
       shell.panel = {
         shadow = false;
       };
+
+      lockscreen = {
+        blurred_desktop = true;
+        fingerprint = false;
+      };
     };
   };
 

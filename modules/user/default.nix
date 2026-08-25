@@ -4,7 +4,7 @@
     # gui
     ./ayugram-desktop
     ./blender
-    ./inkscape
+    ./graphite
 
     # cli/tui
     ./btop
@@ -23,6 +23,5 @@
 
     # lang
     ./rust
-    ./qtdeclarative
   ];
 }

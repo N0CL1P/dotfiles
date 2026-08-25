@@ -136,7 +136,6 @@
       pkgs.nixd
       pkgs.nixfmt
       pkgs.clang-tools
-      pkgs.zls
       pkgs.rust-analyzer
       pkgs.ruff
       pkgs.lua-language-server
