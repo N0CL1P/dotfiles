@@ -24,8 +24,8 @@
       };
 
       wallpaper = {
-        enabled = false;
-        default.path = "../../wallpapers";
+        enabled = true;
+        directory = toString ../../../wallpapers;
       };
 
       location = {
