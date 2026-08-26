@@ -18,8 +18,6 @@
           "starship"
           "btop"
           "qt"
-          "gtk3"
-          "gtk4"
         ];
       };
 
