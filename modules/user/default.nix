@@ -20,8 +20,5 @@
     ./wl-clipboard
     ./mesa-demos
     ./vulkan-tools
-
-    # lang
-    ./rust
   ];
 }
