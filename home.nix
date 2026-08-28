@@ -21,6 +21,10 @@
       name = "adw-gtk3-dark";
       package = pkgs.adw-gtk3;
     };
+    iconTheme = {
+      name = "breeze-dark";
+      package = pkgs.kdePackages.breeze-icons;
+    };
     gtk3.extraConfig = {
       gtk-application-prefer-dark-theme = 1;
     };

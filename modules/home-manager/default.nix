@@ -28,8 +28,8 @@
     ./foot
     ./zsh
     ./starship
+    ./rofi
     ./fuzzel
     ./noctalia
-    # ./river
   ];
 }
