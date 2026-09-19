@@ -1,19 +1,28 @@
 {
   description = "A very basic flake";
+
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nix-minecraft = {
+      url = "github:Infinidoge/nix-minecraft";
+    };
+
     zen-browser = {
       url = "github:youwen5/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     noctalia = {
       url = "github:noctalia-dev/noctalia";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -25,17 +34,23 @@
       self,
       nixpkgs,
       home-manager,
+      nix-minecraft,
       ...
-    }:
+    }@inputs:
     let
       system = "x86_64-linux";
-      inputs = self.inputs;
     in
     {
       nixosConfigurations.nixos-btw = nixpkgs.lib.nixosSystem {
         inherit system;
+        specialArgs = { inherit inputs; };
+
         modules = [
           ./configuration.nix
+
+          nix-minecraft.nixosModules.minecraft-servers
+          { nixpkgs.overlays = [ nix-minecraft.overlay ]; }
+
           home-manager.nixosModules.default
           {
             home-manager = {

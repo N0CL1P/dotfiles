@@ -2,7 +2,7 @@
 {
   imports = [
     ./hardware-configuration.nix
-    # ./minecraft/minecraft-server-1.nix
+    ./minecraft/minecraft-server-1.nix
   ];
 
   boot = {
@@ -100,7 +100,10 @@
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
   programs = {
-    niri.enable = true;
+    niri = {
+      enable = true;
+      useNautilus = true;
+    };
     zsh.enable = true;
     gamemode.enable = true;
     nh = {

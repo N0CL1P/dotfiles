@@ -15,6 +15,7 @@
     ./radare2
 
     # sys
+    ./nautilus
     ./batman
     ./xwayland-satellite
     ./wl-clipboard
