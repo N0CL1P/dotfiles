@@ -1,6 +1,4 @@
 ```bash
-cd dotfiles/cfgs
-stow zshrc -t ~/ 
-cd config
-stow . -t ~/.config
+chmod +x link.sh
+./link.sh       
 ```
