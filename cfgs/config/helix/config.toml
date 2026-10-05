@@ -1,0 +1,41 @@
+theme = "dark_plus"
+
+[editor]
+auto-format = true
+bufferline = "multiple"
+color-modes = true
+line-number = "relative"
+rulers = [120]
+true-color = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+
+[editor.indent-guides]
+render = true
+
+[editor.lsp]
+display-color-swatches = true
+display-inlay-hints = true
+display-messages = true
+
+[editor.search]
+smart-case = true
+
+[editor.whitespace.render]
+newline = "none"
+tab = "all"
+
+[keys.normal]
+A-j = ["extend_to_line_bounds", "delete_selection", "paste_after"]
+A-k = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
+
+[keys.select]
+A-j = ["extend_to_line_bounds", "delete_selection", "paste_after"]
+A-k = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
+

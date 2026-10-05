@@ -1,0 +1,48 @@
+[[language]]
+auto-format = true
+language-servers = ["clangd"]
+name = "c"
+
+[[language]]
+auto-format = true
+language-servers = ["clangd"]
+name = "cpp"
+
+[[language]]
+auto-format = true
+language-servers = ["nixd"]
+name = "nix"
+
+[language.formatter]
+command = "nixfmt"
+
+[[language]]
+auto-format = true
+language-servers = ["vscode-css-language-server", "tailwindcss-language-server"]
+name = "css"
+
+[[language]]
+auto-format = true
+language-servers = ["vscode-css-language-server", "tailwindcss-language-server"]
+name = "scss"
+
+[[language]]
+auto-format = true
+language-servers = ["vscode-html-language-server", "tailwindcss-language-server"]
+name = "html"
+
+[language-server.clangd]
+args = ["--query-driver=/usr/bin/gcc*", "--query-driver=/usr/bin/g++*", "--query-driver=/usr/bin/cc", "--query-driver=/usr/bin/c++", "--background-index", "--clang-tidy"]
+command = "clangd"
+
+[language-server.tailwindcss-language-server]
+args = ["--stdio"]
+command = "tailwindcss-language-server"
+
+[language-server.vscode-css-language-server]
+args = ["--stdio"]
+command = "vscode-css-language-server"
+
+[language-server.vscode-html-language-server]
+args = ["--stdio"]
+command = "vscode-html-language-server"
