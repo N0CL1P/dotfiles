@@ -4,7 +4,7 @@ export TERMINAL=footclient
 
 typeset -U path cdpath fpath manpath
 
-# --- Completion (кэш дампа, пересборка раз в сутки) ---
+# --- Completion ---
 autoload -Uz compinit
 _zcd="${XDG_CACHE_HOME:-$HOME/.cache}/zcompdump"
 if [[ -n $_zcd(#qN.mh+24) ]]; then
@@ -58,11 +58,11 @@ if [[ $TERM != "dumb" ]] && (( $+commands[starship] )); then
   eval "$(starship init zsh)"
 fi
 
-# "command not found" с подсказкой пакета (нужен pkgfile: sudo pacman -S pkgfile && sudo pkgfile -u)
+# "command not found" 
 [[ -f /usr/share/doc/pkgfile/command-not-found.zsh ]] && source /usr/share/doc/pkgfile/command-not-found.zsh
 
 # --- Functions ---
-# yazi: при выходе переходит в последнюю директорию
+# yazi
 function y() {
   local tmp="$(mktemp -t "yazi-cwd.XXXXX")" cwd
   command yazi "$@" --cwd-file="$tmp"
@@ -72,7 +72,6 @@ function y() {
   rm -f -- "$tmp"
 }
 
-# создать директорию и перейти в неё
 function mkcd() { mkdir -p -- "$1" && cd -- "$1" }
 
 # --- Aliases ---
@@ -96,6 +95,6 @@ alias pacs='pacman -Slq | fzf -m --preview "pacman -Si {1}" | xargs -ro sudo pac
 alias pacr='pacman -Qq | fzf -m --preview "pacman -Qi {1}" | xargs -ro sudo pacman -Rns'
 alias orphans='pacman -Qdtq | xargs -ro sudo pacman -Rns'
 
-# --- Syntax highlighting (должен быть последним) ---
+# --- Syntax highlighting ---
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main)
