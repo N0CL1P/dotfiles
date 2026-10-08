@@ -1,48 +1,47 @@
-[[language]]
-auto-format = true
-language-servers = ["clangd"]
-name = "c"
-
-[[language]]
-auto-format = true
-language-servers = ["clangd"]
-name = "cpp"
-
-[[language]]
-auto-format = true
-language-servers = ["nixd"]
-name = "nix"
-
-[language.formatter]
-command = "nixfmt"
-
-[[language]]
-auto-format = true
-language-servers = ["vscode-css-language-server", "tailwindcss-language-server"]
-name = "css"
-
-[[language]]
-auto-format = true
-language-servers = ["vscode-css-language-server", "tailwindcss-language-server"]
-name = "scss"
-
-[[language]]
-auto-format = true
-language-servers = ["vscode-html-language-server", "tailwindcss-language-server"]
-name = "html"
-
 [language-server.clangd]
-args = ["--query-driver=/usr/bin/gcc*", "--query-driver=/usr/bin/g++*", "--query-driver=/usr/bin/cc", "--query-driver=/usr/bin/c++", "--background-index", "--clang-tidy"]
 command = "clangd"
+args = [
+  "--background-index",
+  "--clang-tidy",
+  "--query-driver=/usr/bin/gcc*,/usr/bin/g++*,/usr/bin/cc,/usr/bin/c++",
+  "-j=4",
+  "--header-insertion=never",
+  "--completion-style=detailed"
+]
 
 [language-server.tailwindcss-language-server]
-args = ["--stdio"]
 command = "tailwindcss-language-server"
+args = ["--stdio"]
 
 [language-server.vscode-css-language-server]
-args = ["--stdio"]
 command = "vscode-css-language-server"
+args = ["--stdio"]
 
 [language-server.vscode-html-language-server]
-args = ["--stdio"]
 command = "vscode-html-language-server"
+args = ["--stdio"]
+
+[[language]]
+name = "c"
+language-servers = ["clangd"]
+auto-format = true
+
+[[language]]
+name = "cpp"
+language-servers = ["clangd"]
+auto-format = true
+
+[[language]]
+name = "css"
+language-servers = ["vscode-css-language-server", "tailwindcss-language-server"]
+auto-format = true
+
+[[language]]
+name = "scss"
+language-servers = ["vscode-css-language-server", "tailwindcss-language-server"]
+auto-format = true
+
+[[language]]
+name = "html"
+language-servers = ["vscode-html-language-server", "tailwindcss-language-server"]
+auto-format = true
