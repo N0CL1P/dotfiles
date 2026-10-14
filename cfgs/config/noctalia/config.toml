@@ -119,6 +119,7 @@ widget_order = [ "lockscreen-login-box@winit", "lockscreen-login-box@HDMI-A-1", 
 
 [osd.kinds]
 keyboard_layout = false
+lock_keys = false
 media = false
 
 [shell]
