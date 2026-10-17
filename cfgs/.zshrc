@@ -1,6 +1,7 @@
 export EDITOR=helix
 export VISUAL=helix
 export TERMINAL=footclient
+export _JAVA_AWT_WM_NONREPARENTING=1
 
 typeset -U path cdpath fpath manpath
 

@@ -79,6 +79,7 @@ hotkey-overlay { skip-at-startup; }
 
 environment {
     EDITOR "helix"
+    _JAVA_AWT_WM_NONREPARENTING "1"
 }
 
 binds {
