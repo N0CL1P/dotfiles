@@ -99,3 +99,6 @@ alias orphans='pacman -Qdtq | xargs -ro sudo pacman -Rns'
 # --- Syntax highlighting ---
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main)
+
+# Created by `pipx` on 2026-10-21 14:06:51
+export PATH="$PATH:/home/mollan/.local/bin"

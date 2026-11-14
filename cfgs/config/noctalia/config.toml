@@ -4,7 +4,7 @@ order = "default"
     [bar.default]
     center = [ "clock", "media" ]
     concave_edge_corners = false
-    end = [ "tray", "notifications", "clipboard", "bluetooth", "volume", "battery", "session" ]
+    end = [ "tray", "notifications", "clipboard", "bluetooth", "volume", "session" ]
     margin_ends = 0
     radius = 0
     shadow = false
@@ -48,7 +48,7 @@ widget_order = [ "lockscreen-login-box@winit", "lockscreen-login-box@HDMI-A-1", 
     type = "login_box"
 
         [lockscreen_widgets.widget."lockscreen-login-box@DP-1".settings]
-        background_color = "surface_variant"
+        background_color = "surface_container"
         background_opacity = 0.88
         background_radius = 12.0
         center_password_text = false
@@ -75,7 +75,7 @@ widget_order = [ "lockscreen-login-box@winit", "lockscreen-login-box@HDMI-A-1", 
     type = "login_box"
 
         [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1".settings]
-        background_color = "surface_variant"
+        background_color = "surface_container"
         background_opacity = 0.88
         background_radius = 12.0
         center_password_text = false
@@ -102,7 +102,7 @@ widget_order = [ "lockscreen-login-box@winit", "lockscreen-login-box@HDMI-A-1", 
     type = "login_box"
 
         [lockscreen_widgets.widget."lockscreen-login-box@winit".settings]
-        background_color = "surface_variant"
+        background_color = "surface_container"
         background_opacity = 0.88
         background_radius = 12.0
         center_password_text = false
@@ -154,6 +154,9 @@ transition = [ "fade" ]
 
     [wallpaper.monitors.HDMI-A-1]
     path = "/home/mollan/dotfiles/wallpapers/wallhaven-6deqk7.jpg"
+
+[widget.battery]
+display_mode = "none"
 
 [widget.tray]
 drawer = true
